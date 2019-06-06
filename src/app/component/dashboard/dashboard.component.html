@@ -1,0 +1,170 @@
+
+<div class="header bg- green lighten-2 pb-8 pt-5 pt-md-8 "> <!-- color del dashboard -->
+  <div class="container-fluid">
+    <div class="header-body">
+      <!-- Card stats -->
+      <div class="row">
+
+        <mdb-carousel [animation]="'slide'">
+        <mdb-carousel-item *ngFor="let item of slides; let i = index">
+          <div class="col-md-4" [ngClass]="{'d-none d-md-block': cardIndex !== 0}" *ngFor="let card of item; let cardIndex = index">
+            <mdb-card class="my-1">
+             <div class="view">
+                  <mdb-card-img [src]="card.img" alt="Card image cap"></mdb-card-img>
+
+                  <div class="mask pattern-2 flex-center">
+
+                  <div class="carousel-caption">
+                  <div class="animated fadeInDown">
+                    <h3 class="h3-responsive">{{card.title}}</h3>
+                    <p>{{card.description}}</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            </mdb-card>
+          </div>
+        </mdb-carousel-item>
+      </mdb-carousel>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+<button type="button" mdbBtn color="default" rounded="true" data-toggle="modal" data-target="#basicExample"
+(click)="frame.show()" mdbWavesEffect>Launch Modal</button>
+
+<div mdbModal #frame="mdbModal" class="modal fade left" id="frameModalTop" tabindex="-1" role="dialog"
+aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header text-center">
+  <h4 class="modal-title w-100 font-weight-bold">Sign up</h4>
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body mx-3">
+  <div class="md-form mb-5">
+    <i class="fas fa-user prefix grey-text"></i>
+    <input type="text" id="orangeForm-name" class="form-control validate"
+      mdbInput placeholder="Nombre">
+    <label data-error="wrong" data-success="right" for="orangeForm-name">Your name</label>
+  </div>
+  <div class="md-form mb-5">
+    <i class="fas fa-envelope prefix grey-text"></i>
+    <input type="email" id="orangeForm-email" class="form-control validate"
+      mdbInput placeholder="Email">
+    <label data-error="wrong" data-success="right" for="orangeForm-email">Your email</label>
+  </div>
+
+  <div class="md-form mb-4">
+    <i class="fas fa-lock prefix grey-text"></i>
+    <input type="password" id="orangeForm-pass" class="form-control validate"
+      mdbInput placeholder="Contraseña">
+    <label data-error="wrong" data-success="right" for="orangeForm-pass">Your password</label>
+  </div>
+
+</div>
+<div class="modal-footer d-flex justify-content-center">
+  <button mdbBtn color="deep-orange" class="waves-light" mdbWavesEffect>Sign up</button>
+</div>
+</div>
+</div>
+</div>
+<!--contenido-->
+<mdb-card>
+ <mdb-card-body>
+<div class="container-fluid" style="color:#a1887f" >
+  <!-- Table -->
+  <div class="row">
+    <div class="col">
+      <div class="card shadow animated zoomInDown">
+        <div class="card-header bg-transparent">
+          <h3 class="mb-0">Novedades</h3>
+        </div>
+        <div class="card-group">
+  <!-- Card -->
+        <mdb-card>
+          <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+            <!-- Card img -->
+            <mdb-card-img src="https://mdbootstrap.com/img/Photos/Others/images/49.jpg" alt="Card image cap"></mdb-card-img>
+            <a>
+              <div class="mask"></div>
+            </a>
+          </div>
+
+          <!--Card content-->
+          <mdb-card-body>
+            <!--Title-->
+            <mdb-card-title>
+              <h4>Biomas</h4>
+            </mdb-card-title>
+
+            <!--Text-->
+            <mdb-card-text> Some quick example text to build on the card title and make up the bulk of the card's
+              content.
+            </mdb-card-text>
+
+            <a href="#" mdbBtn color="primary" mdbWavesEffect>Button</a>
+          </mdb-card-body>
+        </mdb-card>
+
+  <!-- Card -->
+  <mdb-card>
+    <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+      <!-- Card img -->
+      <mdb-card-img src="https://mdbootstrap.com/img/Photos/Others/images/48.jpg" alt="Card image cap"></mdb-card-img>
+      <a>
+        <div class="mask"></div>
+      </a>
+    </div>
+    <!--Card content-->
+    <mdb-card-body>
+      <!--Title-->
+      <mdb-card-title>
+        <h4>Card Title</h4>
+      </mdb-card-title>
+
+      <!--Text-->
+      <mdb-card-text> Some quick example text to build on the card title and make up the bulk of the card's
+        content.
+      </mdb-card-text>
+
+      <a href="#" mdbBtn color="primary" mdbWavesEffect>Button</a>
+    </mdb-card-body>
+  </mdb-card>
+
+  <!-- Card -->
+  <mdb-card>
+    <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+      <!-- Card img -->
+      <mdb-card-img src="https://mdbootstrap.com/img/Photos/Others/images/77.jpg" alt="Card image cap"></mdb-card-img>
+      <a>
+        <div class="mask"></div>
+      </a>
+    </div>
+    <!--Card content-->
+    <mdb-card-body>
+      <!--Title-->
+      <mdb-card-title>
+        <h4>Card Title</h4>
+      </mdb-card-title>
+
+      <!--Text-->
+      <mdb-card-text> Some quick example text to build on the card title and make up the bulk of the card's
+        content.
+      </mdb-card-text>
+
+      <a href="#" mdbBtn color="primary" mdbWavesEffect>Button</a>
+    </mdb-card-body>
+  </mdb-card>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+</mdb-card-body>
+</mdb-card>

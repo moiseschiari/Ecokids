@@ -1,0 +1,171 @@
+<!--Main Navigation-->
+<header class="intro-header">
+
+  <!--Navbar-->
+  <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+    <mdb-navbar-brand>
+    </mdb-navbar-brand>
+
+  </mdb-navbar>
+
+  <!--Intro Section-->
+  <section class="view intro-2">
+    <div class="full-bg-img mask rgba-gradient">
+      <div class="container flex-center">
+        <div class="d-flex align-items-center content-height w-100">
+          <div class="row flex-center pt-5 mt-3 w-100">
+            <div class="col-md-6 text-center text-md-left mb-5">
+              <div class="white-text">
+                <h2 class="h1 h1-responsive font-bold wow fadeInLeft" data-wow-delay="0.3s">Bienvenido a EcoKids </h2>
+                <hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
+                <h5 class="wow fadeInLeft" data-wow-delay="0.3s">Plataforma virtual donde podrás aprender sobre la ecología de nuestro planeta,
+                aprender a reciclar, la flora y fauna y realizarás ejercicios prácticos para medir tu conocimiento. Diviertete!</h5>
+                <br>
+                <a mdbBtn color="white" outline="true" class="wow fadeInLeft waves-light" data-wow-delay="0.3s"
+                  mdbWavesEffect>Leer más...</a>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-xl-5 offset-xl-1">
+              <!--Form-->
+              <!--modal-->
+                <button size="lg" type="button" mdbBtn color="light-green" class="waves-light wow fadeInLeft waves-light" data-toggle="modal" data-target="#basicExample"
+                (click)="frame.show()" data-wow-delay="0.3s" mdbWavesEffect>
+                  <mdb-icon fas icon="user-alt" class="mr-1"></mdb-icon>Iniciar Sesión</button>
+
+              <div mdbModal #frame="mdbModal" class="modal fade right" id="frameModalTop" tabindex="-1" role="dialog"
+                aria-labelledby="myModalLabel" aria-hidden="true" [config]="{backdrop: false, ignoreBackdropClick: true}">
+                <div class="modal-dialog modal-full-height modal-right modal-notify modal-success" role="document">
+                  <div class="modal-content">
+                    <!--Header-->
+                    <div class="modal-header">
+                      <p class="heading lead">EcoKids
+                      </p>
+
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+                        <span aria-hidden="true" class="white-text">×</span>
+                      </button>
+                    </div>
+
+                    <!--Body-->
+                    <div class="modal-body">
+                      <div class="text-center">
+                        <i class="far fa-file-alt fa-4x mb-3 animated rotateIn"></i>
+                        <p>
+                          <strong>Eres importante para nosotros</strong>
+                        </p>
+                        <p>Inicia sesión para aprovechar todas las funciones
+
+                        </p>
+                      </div>
+
+                      <hr>
+
+                      <div class="modal-body mx-3">
+                        <div class="md-form mb-5">
+                          <i class="fas fa-envelope prefix grey-text"></i>
+                          <input type="email" id="defaultForm-email" [formControl]="loginFormModalEmail" class="form-control validate"
+                            mdbInput placeholder="E-mail">
+                          <label data-error="wrong" data-success="right" for="defaultForm-email">Your email</label>
+                        </div>
+
+                        <div class="md-form mb-4">
+                          <i class="fas fa-lock prefix grey-text"></i>
+                          <input type="password" id="defaultForm-pass" [formControl]="loginFormModalPassword" class="form-control validate"
+                            mdbInput placeholder="Contraseña">
+                          <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                    <!--Footer-->
+                    <div class="modal-footer justify-content-center">
+                      <a type="button" mdbBtn color="primary" class="waves-light" mdbWavesEffect>Send
+                        <i class="fas fa-paper-plane ml-1"></i>
+                      </a>
+                      <a type="button" mdbBtn color="primary" outline="true" class="waves-effect" data-dismiss="modal"
+                        mdbWavesEffect (click)="frame.hide()">Cancel</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--modal-->
+
+              <!--registro-->
+                <button size="lg" type="button" mdbBtn color="light-green" class="waves-light wow fadeInLeft waves-light" data-toggle="modal" data-target="#basicExample2"
+                (click)="frame.show()" data-wow-delay="0.3s" mdbWavesEffect>
+                  <mdb-icon fas icon="magic" class="mr-1"></mdb-icon>Registro</button>
+
+              <div mdbModal #frame="mdbModal" class="modal fade left" id="frameModalTop" tabindex="-1" role="dialog"
+                aria-labelledby="myModalLabel" aria-hidden="true" [config]="{backdrop: false, ignoreBackdropClick: true}">
+                <div class="modal-dialog modal-full-height modal-right modal-notify modal-success" role="document">
+                  <div class="modal-content">
+                    <!--Header-->
+                    <div class="modal-header">
+                      <p class="heading lead">EcoKids
+                      </p>
+
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+                        <span aria-hidden="true" class="white-text">×</span>
+                      </button>
+                    </div>
+
+                    <!--Body-->
+                    <div class="modal-body">
+                      <div class="text-center">
+                        <mdb-icon class="fa-4x mb-3 animated rotateIn" fas icon="smile-wink"></mdb-icon>
+                        <p>
+                          <strong>Eres importante para nosotros</strong>
+                        </p>
+                        <p>Inicia sesión para aprovechar todas las funciones
+
+                        </p>
+                      </div>
+
+                      <hr>
+
+                      <div class="modal-body mx-3">
+
+                        <div class="md-form mb-5">
+                          <i class="fas fa-envelope prefix grey-text"></i>
+                          <input type="email" id="defaultForm-email" [formControl]="loginFormModalEmail" class="form-control validate"
+                            mdbInput placeholder="E-mail">
+                          <label data-error="wrong" data-success="right" for="defaultForm-email">Your email</label>
+                        </div>
+
+                        <div class="md-form mb-4">
+                          <i class="fas fa-lock prefix grey-text"></i>
+                          <input type="password" id="defaultForm-pass" [formControl]="loginFormModalPassword" class="form-control validate"
+                            mdbInput placeholder="Contraseña">
+                          <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                    <!--Footer-->
+                    <div class="modal-footer justify-content-center">
+                      <a type="button" mdbBtn color="primary" class="waves-light" mdbWavesEffect>Comenzar
+                        <i class="fas fa-paper-plane ml-1"></i>
+                      </a>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--modal-->
+
+
+          </div>
+              <!--/.Form-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</header>
+<!--Main Navigation-->
