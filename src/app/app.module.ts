@@ -12,14 +12,21 @@ import { SidebarComponent } from './component/sidebar/sidebar.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { PerfilComponent } from './component/perfil/perfil.component';
-import { LoginComponent } from './component/login/login.component';
-import { RegistroComponent } from './component/registro/registro.component';
+import { LoginComponent } from './component/user/login/login.component';
+import { UserComponent } from './component/user/user.component';
+import { RegisterComponent } from './component/user/login/register/register.component';
 
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'perfil', component: PerfilComponent },
-  { path: 'login', component: LoginComponent },
+
+  { path: 'login', component: LoginComponent ,children:[
+    { path: 'register', component: RegisterComponent }
+  ]},
+  { path: 'user', component: UserComponent },
+
+
 
   { path: '**', pathMatch:'full', redirectTo: 'dashboard' },
 
@@ -35,7 +42,8 @@ export const APP_ROUTING =   RouterModule.forRoot(routes);
     DashboardComponent,
     PerfilComponent,
     LoginComponent,
-    RegistroComponent,
+    UserComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
