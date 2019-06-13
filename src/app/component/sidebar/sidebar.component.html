@@ -18,11 +18,11 @@
             <div class="list-group list-group-flush" >
 
                 <a routerLink="dashboards/v1" routerLinkActive="active" class="list-group-item list-group-item-action waves-effect">
-                    <mdb-icon fas icon="chart-pie" class="mr-3" style="color:#ffd54f">
-                    </mdb-icon>Inicio
+                    <mdb-icon fas icon="chart-pie" class="mr-3" style="color:#ffd54f"></mdb-icon>Inicio
                 </a>
-                <a routerLink="tables/table1" routerLinkActive="active" class="list-group-item list-group-item-action waves-effect">
+                <a [routerLink]="['tutoria']" routerLinkActive="active" class="list-group-item list-group-item-action waves-effect">
                     <mdb-icon fas icon="table" class="mr-3" style="color:#a1887f"></mdb-icon>Tutorías</a>
+
                 <a [routerLink]="['login']" routerLinkActive="active" class="list-group-item list-group-item-action waves-effect">
                     <mdb-icon far icon="map" class="mr-3" style="color:#81c784"></mdb-icon>Puntajes</a>
                 <a [routerLink]="['perfil']" routerLinkActive="active" class="list-group-item list-group-item-action waves-effect">

@@ -37,17 +37,25 @@
           <div class="modal-body">
             <div class="md-form form-sm">
               <input mdbInput type="text" id="form24" class="form-control" [formControl]="modalFormRegisterEmail">
-              <label for="form24">Your email</label>
+              <label for="form24">Tu e-mail</label>
             </div>
 
             <div class="md-form form-sm">
               <input mdbInput type="password" id="form25" class="form-control" [formControl]="modalFormRegisterPassword">
-              <label for="form25">Your password</label>
+              <label for="form25">Contraseña</label>
             </div>
 
             <div class="md-form form-sm">
               <input mdbInput type="password" id="form26" class="form-control" [formControl]="modalFormRegisterRepeatPassword">
-              <label for="form26">Repeat password</label>
+              <label for="form26">Repite la contraseña</label>
+            </div>
+            <div class="md-form form-sm">
+            <select class="browser-default custom-select">
+              <option selected>Género</option>
+              <option value="1">M</option>
+              <option value="2">F</option>
+
+            </select>
             </div>
 
           </div>

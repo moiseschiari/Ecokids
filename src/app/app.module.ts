@@ -15,6 +15,7 @@ import { PerfilComponent } from './component/perfil/perfil.component';
 import { LoginComponent } from './component/user/login/login.component';
 import { UserComponent } from './component/user/user.component';
 import { RegisterComponent } from './component/user/login/register/register.component';
+import { TutoriaComponent } from './component/tutoria/tutoria.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,7 @@ const routes: Routes = [
     { path: 'register', component: RegisterComponent }
   ]},
   { path: 'user', component: UserComponent },
+  { path: 'tutoria', component: TutoriaComponent },
 
 
 
@@ -44,6 +46,7 @@ export const APP_ROUTING =   RouterModule.forRoot(routes);
     LoginComponent,
     UserComponent,
     RegisterComponent,
+    TutoriaComponent,
   ],
   imports: [
     BrowserModule,
