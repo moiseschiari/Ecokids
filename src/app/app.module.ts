@@ -12,25 +12,19 @@ import { SidebarComponent } from './component/sidebar/sidebar.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { PerfilComponent } from './component/perfil/perfil.component';
-import { LoginComponent } from './component/user/login/login.component';
-import { UserComponent } from './component/user/user.component';
-import { RegisterComponent } from './component/user/login/register/register.component';
 import { TutoriaComponent } from './component/tutoria/tutoria.component';
 
 
 const routes: Routes = [
+  { path: '', redirectTo: '/auth', pathMatch: 'full' },
+  { path: 'auth', loadChildren: './auth/auth.module#AuthModule' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'perfil', component: PerfilComponent },
-
-  { path: 'login', component: LoginComponent ,children:[
-    { path: 'register', component: RegisterComponent }
-  ]},
-  { path: 'user', component: UserComponent },
   { path: 'tutoria', component: TutoriaComponent },
 
 
 
-  { path: '**', pathMatch:'full', redirectTo: 'dashboard' },
+  //{ path: '**', pathMatch:'full', redirectTo: 'dashboard' },
 
 ];
 
@@ -43,9 +37,6 @@ export const APP_ROUTING =   RouterModule.forRoot(routes);
     FooterComponent,
     DashboardComponent,
     PerfilComponent,
-    LoginComponent,
-    UserComponent,
-    RegisterComponent,
     TutoriaComponent,
   ],
   imports: [
@@ -57,6 +48,7 @@ export const APP_ROUTING =   RouterModule.forRoot(routes);
     ReactiveFormsModule,
     IconsModule,
   ],
+   exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })

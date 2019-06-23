@@ -7,8 +7,9 @@ import { Component, OnInit,ViewChild,ElementRef } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
     @ViewChild('sidenav') sidenav: ElementRef;
-
     clicked: boolean;
+    public isLogged: boolean = false;
+
 
     constructor() {
       this.clicked = this.clicked === undefined ? false : true;
