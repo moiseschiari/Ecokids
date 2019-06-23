@@ -1,21 +1,17 @@
 {
-  "name": "api-rest",
+  "name": "node_firebase",
   "version": "1.0.0",
-  "description": "Servidor para proyecto ecokids (Ingenieria de Software), proyecto academico de una herramienta educativa con temas relacionados a ecologia",
+  "description": "ecokids",
   "main": "server.js",
-  "dependencies": {
-    "express": "^4.17.1",
-    "firebase": "^6.1.1",
-    "firebase-admin": "^8.1.0",
-    "method-override": "^3.0.0",
-    "morgan": "^1.9.1",
-    "multer": "^1.4.1"
-  },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Giancarlo Araujo, Moises Chiari, Andres Jimenez",
-  "license": "MIT"
+  "author": "gian, moises, andres",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "firebase-admin": "^8.2.0",
+    "nodemon": "^1.19.1"
+  }
 }
