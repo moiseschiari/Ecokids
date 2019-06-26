@@ -1,0 +1,88 @@
+<!--modal-->
+  <button size="sm" type="button" mdbBtn  class="green lighten-1-color white-text waves-light wow fadeInLeft waves-light" data-toggle="modal" data-target="#basicExample"
+  (click)="frame.show()" data-wow-delay="0.3s" mdbWavesEffect>
+    <mdb-icon fas icon="address-card" class="mr-1"></mdb-icon>Registro</button>
+
+
+<div mdbModal #frame="mdbModal" class="modal fade right" id="frameModalTop" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true" [config]="{backdrop: false, ignoreBackdropClick: true}">
+  <div class=" modal-dialog modal-full-height modal-left modal-notify" role="document">
+    <div class="modal-content">
+      <!--Header-->
+      <div class=" green lighten-1-color modal-header">
+        <p class="heading lead">EcoKids
+        </p>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+          <span aria-hidden="true" class="white-text">×</span>
+        </button>
+      </div>
+
+
+      <!--Body-->
+      <div class="modal-body">
+        <div class="text-center">
+          <mdb-icon far icon="thumbs-up" class="fa-4x mb-3 bounceIn" style="color:#ffd54f "></mdb-icon>
+
+          <p>
+            <strong>Eres importante para nosotros</strong>
+          </p>
+          <p>Registrate para aprovechar todas nuestras actividades.
+
+          </p>
+        </div>
+
+        <hr>
+
+        <!--Body-->
+
+
+        <!-- Default form register -->
+    <form #formRegister="ngForm" (ngSubmit)="onAddUser()" class="text-center border border-light p-5">
+
+      <p class="h4 mb-4">Registro</p>
+
+      <div class="form-row mb-4">
+        <div class="col">
+          <!-- First name -->
+          <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="First name">
+        </div>
+        <div class="col">
+          <!-- Last name -->
+          <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Last name">
+        </div>
+      </div>
+
+      <!-- E-mail -->
+      <input type="email" name="email" class="form-control mb-4" placeholder="E-mail" [(ngModel)]="email" required minlength="8">
+
+      <!-- Password -->
+      <input type="password" name="password" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" [(ngModel)]="password" required minlength="5"
+                    maxlength="10">
+      <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+        At least 8 characters and 1 digit
+      </small>
+
+      <!-- Sign up button -->
+      <button mdbBtn color="info" block="true" class="my-4" type="submit">Sign in</button>
+
+      <!-- Social register -->
+      <p>or sign up with:</p>
+
+      <a (click)="onLoginFacebook()" type="button" class="light-blue-text mx-2">
+        <mdb-icon fab icon="facebook"></mdb-icon>
+      </a>
+      <a (click)="onLoginGoogle()" type="button" class="light-blue-text mx-2">
+        <mdb-icon fab icon="google"></mdb-icon>
+      </a>
+    </form>
+    <!-- Default form register -->
+
+      </div>
+
+
+
+    </div>
+  </div>
+</div>
+<!--modal-->

@@ -5,6 +5,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { IconsModule } from 'angular-bootstrap-md'
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from 'src/environments/environment';
+
 import { AppComponent } from './app.component';
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
@@ -13,6 +19,7 @@ import { FooterComponent } from './component/footer/footer.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { PerfilComponent } from './component/perfil/perfil.component';
 import { TutoriaComponent } from './component/tutoria/tutoria.component';
+
 
 
 const routes: Routes = [
@@ -47,9 +54,15 @@ export const APP_ROUTING =   RouterModule.forRoot(routes);
     FormsModule,
     ReactiveFormsModule,
     IconsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    AngularFireDatabaseModule,
+
+
   ],
    exports: [RouterModule],
-  providers: [],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
