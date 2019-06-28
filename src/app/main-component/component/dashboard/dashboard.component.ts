@@ -15,25 +15,25 @@ export class DashboardComponent implements OnInit {
         img: 'https://mdbootstrap.com/img/video/forest.mp4'
       },
       {
-        title: 'Card Title 2',
+        title: 'Reino fungi',
         description: 'Some quick example text to build on the card title and make up the bulk of the card content',
         buttonText: 'Button',
         img: 'https://mdbootstrap.com/img/video/forest.mp4'
       },
       {
-        title: 'Card Title 3',
+        title: 'Zonga geografica',
         description: 'Some quick example text to build on the card title and make up the bulk of the card content',
         buttonText: 'Button',
         img: 'https://mdbootstrap.com/img/video/Tropical.mp4'
       },
       {
-        title: 'Card Title 4',
+        title: 'Ciclo del agua',
         description: 'Some quick example text to build on the card title and make up the bulk of the card content',
         buttonText: 'Button',
         img: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg'
       },
       {
-        title: 'Card Title 5',
+        title: 'Cuerpo humano',
         description: 'Some quick example text to build on the card title and make up the bulk of the card content',
         buttonText: 'Button',
         img: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg'

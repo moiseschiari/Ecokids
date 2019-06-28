@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
         }).catch(err => console.log('err', err.message));
     }
   onLoginRedirect(): void {
-      this.router.navigate(['dashboard']);
+      this.router.navigate(['main-component/dashboard']);
     }
 
 

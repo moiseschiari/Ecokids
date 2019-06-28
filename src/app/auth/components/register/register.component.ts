@@ -1,9 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
-import { AngularFireStorage } from '@angular/fire/storage';
-import { finalize } from 'rxjs/operators';
-import { Observable } from 'rxjs/internal/Observable';
 
 @Component({
   selector: 'app-register',
@@ -15,33 +12,33 @@ export class RegisterComponent implements OnInit {
   public password: string =' ';
 
 
-  constructor( private router: Router, private authService: AuthService) { }
+  constructor(private ngZone: NgZone, private router: Router, private authService: AuthService) { }
 
   ngOnInit() {
   }
   onAddUser() {
     this.authService.registerUser(this.email, this.password)
-      .then((res) => {
-              this.router.navigate(['dashboard']);
+      .then(() => {
+              this.router.navigate(['main-component/dashboard']);
               }).catch(err => console.log('err', err.message));
 
             }
   onLoginFacebook(): void {
     this.authService.loginFacebookUser()
-      .then((res) => {
+      .then(() => {
        this.onLoginRedirect();
        }).catch(err => console.log('err', err.message));
           }
 
     onLoginGoogle(): void {
         this.authService.loginGoogleUser()
-        .then((res) => {
+        .then(() => {
         this.onLoginRedirect();
         }).catch(err => console.log('err', err.message));
         }
 
     onLoginRedirect(): void {
-       this.router.navigate(['dashboard']);
+      this.ngZone.run(() =>this.router.navigate(['main-component/dashboard']));
         }
 
 }

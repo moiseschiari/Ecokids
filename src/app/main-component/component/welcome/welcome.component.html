@@ -1,0 +1,80 @@
+<button type="button" mdbBtn color="default" rounded="true" data-toggle="modal" data-target="#basicExample" (click)="frame.show()"
+  mdbWavesEffect>Launch Modal</button>
+
+<div mdbModal #frame="mdbModal" class="modal fade top" id="frameModalTop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-notify modal-success modal-lg" role="document">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header">
+        <p class="heading lead">Modal Success</p>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+          <span aria-hidden="true" class="white-text">&times;</span>
+        </button>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+        <!-- Form -->
+    <form class="text-center" style="color: #757575;">
+
+      <div class="form-row">
+        <div class="col">
+          <!-- First name -->
+          <div class="md-form">
+            <input type="text" id="materialRegisterFormFirstName" class="form-control" mdbInput>
+            <label for="materialRegisterFormFirstName">First name</label>
+          </div>
+        </div>
+        <div class="col">
+          <!-- Last name -->
+          <div class="md-form">
+            <input type="email" id="materialRegisterFormLastName" class="form-control" mdbInput>
+            <label for="materialRegisterFormLastName">Last name</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- E-mail -->
+      <div class="md-form mt-0">
+        <input type="email" id="materialRegisterFormEmail" class="form-control" mdbInput>
+        <label for="materialRegisterFormEmail">E-mail</label>
+      </div>
+
+      <!-- Password -->
+      <div class="md-form">
+        <input type="password" id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock"
+          mdbInput>
+        <label for="materialRegisterFormPassword">Password</label>
+        <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+          At least 8 characters and 1 digit
+        </small>
+      </div>
+
+      <!-- Phone number -->
+      <div class="md-form">
+        <input type="text" id="materialRegisterFormPhone" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock"
+          mdbInput>
+        <label for="materialRegisterFormPhone">Phone number</label>
+        <small id="materialRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
+          Optional - for two step authentication
+        </small>
+      </div>
+
+    </form>
+    <!-- Form -->
+      </div>
+
+      <!--Footer-->
+      <div class="modal-footer justify-content-center">
+        <a type="button" mdbBtn color="success" class="waves-effect" mdbWavesEffect>Get it now
+          <i class="far fa-gem ml-1"></i>
+        </a>
+        <a type="button" mdbBtn color="success" outline="true" class="waves-effect" mdbWavesEffect (click)="frame.hide()">No, thanks</a>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
