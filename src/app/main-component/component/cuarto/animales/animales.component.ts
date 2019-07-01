@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-animales',
@@ -16,7 +15,7 @@ export class AnimalesComponent implements OnInit {
       description: 'Vas a aprender sobre la claisficación de los seres vivos y sus respectivos reinos.',
       buttonText: 'Comenzemos!',
       img: 'https://elblogverde.com/wp-content/uploads/2017/05/reino-metazoos-600x437.jpg'
-
+      
     },
     {
       title: 'Animales vertebrados',

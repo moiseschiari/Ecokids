@@ -21,10 +21,9 @@
                   <div class="animated fadeInDown">
                     <h3 class="h3-responsive">{{card.title}}</h3>
                     <p>{{card.description}}</p>
-                    <a [routerLink]="['dashboard']"  mdbBtn color="primary" class="bwaves-light" mdbTooltip="{{card.description}}" placement="top" mdbWavesEffect>
+                    <a routerLink="/main-component/animal-text"  mdbBtn color="primary" class="bwaves-light" mdbTooltip="{{card.description}}" placement="top" mdbWavesEffect>
                         {{card.buttonText}}
                     </a>
-                    <a routerLink="/main-component/cuarto"  mdbBtn color="primary" class="waves-light" mdbWavesEffect>{{card.buttonText}}</a>
     
                   </div>
                 </div>
@@ -36,8 +35,6 @@
     
         </div>
       </mdb-carousel>
-    
-      
-  
+
 </body>
 </html>

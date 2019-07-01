@@ -23,7 +23,7 @@ import { CuartoComponent } from './main-component/component/cuarto/cuarto.compon
 import { AnimalesComponent } from './main-component/component/cuarto/animales/animales.component';
 import { HumanoComponent } from './main-component/component/cuarto/humano/humano.component';
 import { EnergiaComponent } from './main-component/component/cuarto/energia/energia.component';
-import { AnimalTextComponent } from './main-component/component/cuarto/animales/animal-text/animal-text.component';
+import { AnimalTextComponent } from './main-component/component/cuarto/animal-text/animal-text.component';
 
 
 
@@ -37,7 +37,12 @@ const routes: Routes = [
     { path: 'dashboard', component: DashboardComponent },
     { path: 'perfil', component: PerfilComponent },
     { path: 'tutoria', component: TutoriaComponent },
-    { path: 'cuarto', component: CuartoComponent },
+    { path: 'animal-text', component: AnimalTextComponent },
+
+    { path: 'cuarto', component: CuartoComponent, children:[
+      { path: 'animales', component: AnimalesComponent },
+  
+     ]},
 
   ]},
 
