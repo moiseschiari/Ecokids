@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Temas</title>
+</head>
+<body>
+
+    <mdb-carousel *ngFor="let item of slides; let i = index">
+        <div class="row">
+        <div class="col-md-4 " [ngClass]="{'': cardIndex !== 0}" *ngFor="let card of item; let cardIndex = index">
+        
+          <mdb-card class="my-4 animated zoomInDown waves-light" mdbWavesEffect>
+              <div class="view">
+                  <mdb-card-img [src]="card.img" alt="Card image cap"></mdb-card-img>
+                  <div class="mask pattern-2 flex-center">
+    
+                  <div class="carousel-caption">
+                  <div class="animated fadeInDown">
+                    <h3 class="h3-responsive">{{card.title}}</h3>
+                    <p>{{card.description}}</p>
+                    <a [routerLink]="['dashboard']"  mdbBtn color="primary" class="bwaves-light" mdbTooltip="{{card.description}}" placement="top" mdbWavesEffect>
+                        {{card.buttonText}}
+                    </a>
+                    <a routerLink="/main-component/cuarto"  mdbBtn color="primary" class="waves-light" mdbWavesEffect>{{card.buttonText}}</a>
+    
+                  </div>
+                </div>
+              </div>
+    
+            </div>
+          </mdb-card>
+        </div>
+    
+        </div>
+      </mdb-carousel>
+    
+      
+  
+</body>
+</html>

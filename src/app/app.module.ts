@@ -10,14 +10,20 @@ import { RouterModule, Routes } from '@angular/router';
 import { IconsModule, MDBBootstrapModule } from 'angular-bootstrap-md';
 import { environment } from 'src/environments/environment';
 import { AppComponent } from './app.component';
+import {MatTabsModule} from '@angular/material/tabs';
+
 
 import { DashboardComponent } from './main-component/component/dashboard/dashboard.component';
 import { FooterComponent } from './main-component/component/footer/footer.component';
 import { PerfilComponent } from './main-component/component/perfil/perfil.component';
 import { SidebarComponent } from './main-component/component/sidebar/sidebar.component';
 import { TutoriaComponent } from './main-component/component/tutoria/tutoria.component';
-import { WelcomeComponent } from './main-component/component/welcome/welcome.component';
 import { MainComponentComponent } from './main-component/main-component.component';
+import { CuartoComponent } from './main-component/component/cuarto/cuarto.component';
+import { AnimalesComponent } from './main-component/component/cuarto/animales/animales.component';
+import { HumanoComponent } from './main-component/component/cuarto/humano/humano.component';
+import { EnergiaComponent } from './main-component/component/cuarto/energia/energia.component';
+import { AnimalTextComponent } from './main-component/component/cuarto/animales/animal-text/animal-text.component';
 
 
 
@@ -28,10 +34,11 @@ const routes: Routes = [
   { path: 'auth', loadChildren: './auth/auth.module#AuthModule' },
   { path: 'main-component', component: MainComponentComponent ,children: [
     { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-    { path: 'welcome', component: WelcomeComponent },
     { path: 'dashboard', component: DashboardComponent },
     { path: 'perfil', component: PerfilComponent },
     { path: 'tutoria', component: TutoriaComponent },
+    { path: 'cuarto', component: CuartoComponent },
+
   ]},
 
   
@@ -52,8 +59,12 @@ export const APP_ROUTING =   RouterModule.forRoot(routes);
     DashboardComponent,
     PerfilComponent,
     TutoriaComponent,
-    WelcomeComponent,
     MainComponentComponent,
+    CuartoComponent,
+    AnimalesComponent,
+    HumanoComponent,
+    EnergiaComponent,
+    AnimalTextComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,6 +78,7 @@ export const APP_ROUTING =   RouterModule.forRoot(routes);
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireDatabaseModule,
+    MatTabsModule,
 
 
   ],
