@@ -25,6 +25,7 @@ import { HumanoComponent } from './main-component/component/cuarto/humano/humano
 import { EnergiaComponent } from './main-component/component/cuarto/energia/energia.component';
 import { AnimalTextComponent } from './main-component/component/cuarto/texto/animal-text/animal-text.component';
 import { TextoComponent } from './main-component/component/cuarto/texto/texto.component';
+import { QuizComponent } from './main-component/component/cuarto/texto/quiz/quiz.component';
 
 
 
@@ -74,6 +75,7 @@ export const APP_ROUTING =   RouterModule.forRoot(routes);
     EnergiaComponent,
     AnimalTextComponent,
     TextoComponent,
+    QuizComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,87 @@
+<button type="button" mdbBtn color="primary" class="waves-light" data-toggle="modal" data-target="#basicExample"
+  (click)="frame.show()" mdbWavesEffect>Quiz</button>
+
+<div mdbModal #frame="mdbModal" class="modal fade right" id="frameModalTop" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true" [config]="{backdrop: false, ignoreBackdropClick: true}">
+  <div class="modal-dialog modal-full-height modal-right modal-notify modal-info" role="document">
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header">
+        <p class="heading lead">Reinos de los seres vivos
+        </p>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+          <span aria-hidden="true" class="white-text">×</span>
+        </button>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+        <div class="text-center">
+          <i class="far fa-file-alt fa-4x mb-3 animated rotateIn"></i>
+          <p>
+            <strong>¡Hagamos un quiz breve de lo que aprendiste!</strong>
+          </p>
+          <p>Tema: Reino Animal
+            <strong>¡Suerte!</strong>
+          </p>
+        </div>
+
+        <hr>
+
+        <!-- Radio -->
+        <p class="text-center">
+          <strong>¿El reino fungi está conformado por...?</strong>
+        </p>
+        <div class="form-check mb-4">
+          <input class="form-check-input" name="group1" type="radio" id="radio-179" value="option1"
+            mdbInput>
+          <label class="form-check-label" for="radio-179">Plantas</label>
+        </div>
+
+        <div class="form-check mb-4">
+          <input class="form-check-input" name="group1" type="radio" id="radio-279" value="option2"
+            mdbInput>
+          <label class="form-check-label" for="radio-279">Protozoos y algas</label>
+        </div>
+
+        <div class="form-check mb-4">
+          <input class="form-check-input" name="group1" type="radio" id="radio-379" value="option3"
+            mdbInput>
+          <label class="form-check-label" for="radio-379">Hongos, mohos y levaduras</label>
+        </div>
+        <div class="form-check mb-4">
+          <input class="form-check-input" name="group1" type="radio" id="radio-479" value="option4"
+            mdbInput>
+          <label class="form-check-label" for="radio-479">Bacterias</label>
+        </div>
+        <div class="form-check mb-4">
+          <input class="form-check-input" name="group1" type="radio" id="radio-579" value="option5"
+            mdbInput>
+          <label class="form-check-label" for="radio-579">Animales</label>
+        </div>
+        <!-- Radio -->
+
+        <p class="text-center">
+          <strong>Menciona una caracteristica del reino animal</strong>
+        </p>
+        <!--Basic textarea-->
+        <div class="md-form">
+          <textarea type="text" id="form79textarea" class="md-textarea form-control" rows="3"
+            mdbInput></textarea>
+          <label for="form79textarea">Tu respuesta...</label>
+        </div>
+
+      </div>
+
+      <!--Footer-->
+      <div class="modal-footer justify-content-center">
+        <a type="button" mdbBtn color="primary" class="waves-light" mdbWavesEffect>¡Listo!
+          <i class="fas fa-paper-plane ml-1"></i>
+        </a>
+        <a type="button" mdbBtn color="primary" outline="true" class="waves-effect" data-dismiss="modal"
+          mdbWavesEffect (click)="frame.hide()">Cancel</a>
+      </div>
+    </div>
+  </div>
+</div>
