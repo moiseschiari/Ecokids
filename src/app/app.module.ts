@@ -23,7 +23,8 @@ import { CuartoComponent } from './main-component/component/cuarto/cuarto.compon
 import { AnimalesComponent } from './main-component/component/cuarto/animales/animales.component';
 import { HumanoComponent } from './main-component/component/cuarto/humano/humano.component';
 import { EnergiaComponent } from './main-component/component/cuarto/energia/energia.component';
-import { AnimalTextComponent } from './main-component/component/cuarto/animal-text/animal-text.component';
+import { AnimalTextComponent } from './main-component/component/cuarto/texto/animal-text/animal-text.component';
+import { TextoComponent } from './main-component/component/cuarto/texto/texto.component';
 
 
 
@@ -37,8 +38,10 @@ const routes: Routes = [
     { path: 'dashboard', component: DashboardComponent },
     { path: 'perfil', component: PerfilComponent },
     { path: 'tutoria', component: TutoriaComponent },
-    { path: 'animal-text', component: AnimalTextComponent },
 
+    { path: 'texto', component: TextoComponent, children:[
+      { path: 'animal-text', component: AnimalTextComponent },  
+     ]},
     { path: 'cuarto', component: CuartoComponent, children:[
       { path: 'animales', component: AnimalesComponent },
   
@@ -70,6 +73,7 @@ export const APP_ROUTING =   RouterModule.forRoot(routes);
     HumanoComponent,
     EnergiaComponent,
     AnimalTextComponent,
+    TextoComponent,
   ],
   imports: [
     BrowserModule,

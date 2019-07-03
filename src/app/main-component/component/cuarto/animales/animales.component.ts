@@ -16,6 +16,7 @@ export class AnimalesComponent implements OnInit {
       buttonText: 'Comenzemos!',
       img: 'https://elblogverde.com/wp-content/uploads/2017/05/reino-metazoos-600x437.jpg'
       
+      
     },
     {
       title: 'Animales vertebrados',
