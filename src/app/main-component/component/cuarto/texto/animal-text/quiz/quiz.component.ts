@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-
+import {FormBuilder, FormGroup, Validators,FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-quiz',
@@ -8,6 +7,19 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./quiz.component.scss']
 })
 
-  export class QuizComponent {
-    items = Array.from({length: 100000}).map((_, i) => `Item #${i}`);
+  export class QuizComponent  implements OnInit {
+  isLinear = false;
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
+
+  constructor(private _formBuilder: FormBuilder) {}
+
+  ngOnInit() {
+    this.firstFormGroup = this._formBuilder.group({
+      firstCtrl: ['', Validators.required]
+    });
+    this.secondFormGroup = this._formBuilder.group({
+      secondCtrl: ['', Validators.required]
+    });
   }
+}

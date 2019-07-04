@@ -12,6 +12,7 @@ import { environment } from 'src/environments/environment';
 import { AppComponent } from './app.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {ScrollDispatchModule} from '@angular/cdk/scrolling';
+import { MatStepperModule, MatInputModule, MatButtonModule, MatAutocompleteModule } from '@angular/material';
 
 
 import { DashboardComponent } from './main-component/component/dashboard/dashboard.component';
@@ -26,9 +27,7 @@ import { HumanoComponent } from './main-component/component/cuarto/humano/humano
 import { EnergiaComponent } from './main-component/component/cuarto/energia/energia.component';
 import { AnimalTextComponent } from './main-component/component/cuarto/texto/animal-text/animal-text.component';
 import { TextoComponent } from './main-component/component/cuarto/texto/texto.component';
-import { QuizComponent } from './main-component/component/cuarto/texto/quiz/quiz.component';
-import { ErgiaTextComponent } from './main-component/cuarto/texto/ergia-text/ergia-text.component';
-import { HumanoTextComponent } from './main-component/cuarto/texto/humano-text/humano-text.component';
+import { QuizComponent } from './main-component/component/cuarto/texto/animal-text/quiz/quiz.component';
 import { EnergiaTextComponent } from './main-component/component/cuarto/texto/energia-text/energia-text.component';
 import { InvertebradosTextComponent } from './main-component/component/cuarto/texto/invertebrados-text/invertebrados-text.component';
 import { VertebradosTextComponent } from './main-component/component/cuarto/texto/vertebrados-text/vertebrados-text.component';
@@ -82,8 +81,6 @@ export const APP_ROUTING =   RouterModule.forRoot(routes);
     AnimalTextComponent,
     TextoComponent,
     QuizComponent,
-    ErgiaTextComponent,
-    HumanoTextComponent,
     EnergiaTextComponent,
     InvertebradosTextComponent,
     VertebradosTextComponent,
@@ -102,6 +99,10 @@ export const APP_ROUTING =   RouterModule.forRoot(routes);
     AngularFireDatabaseModule,
     MatTabsModule,
     ScrollDispatchModule,
+    MatStepperModule,
+    MatInputModule,
+    MatButtonModule,
+    MatAutocompleteModule, 
 
 
   ],

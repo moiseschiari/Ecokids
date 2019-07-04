@@ -1,160 +1,192 @@
 <mdb-card>
     <mdb-card-body>
-        <form >
+        <form>
             <mdb-card>
                 <mdb-card-body>
                     <h2><span class="green-text d-flex justify-content-center">Seres vivos: clasificación</span>
                     </h2>
                 </mdb-card-body>
             </mdb-card>
-            
-            <hr class ="style18" color="#a1887f">
+
+            <hr class="style18" color="#a1887f">
 
             <h4>Los seres vivos se clasifican en grandes grupos llamados reinos. Existen cinco reinos:</h4>
 
             <h5>
-                    <ul >
-                            <li  data-claire-element-id="5091476">
-                                <p  data-claire-element-id="5091475">
-                                    <code data-claire-semantic="text" class="green-text">Reino Animal</code>: <em>Conformado por animales.</em>
-                                </p>
-                            </li>
-                            <li data-claire-element-id="5091478">
-                                <p  data-claire-element-id="5091477">
-                                    <code data-claire-semantic="text" class="green-text">Reino Vegetal</code>: <em>Se caracteriza por las plantas.</em></p>
-                                </li>
-                                <li  data-claire-element-id="5091480">
-                                    <p  data-claire-element-id="5091479"><code data-claire-semantic="text" class="green-text">Reino hongos</code>: <em>setas, mohos y levaduras</em>.
-                                    </p>
-                                </li>
-                                <li data-claire-element-id="5091482">
-                                        <p  data-claire-element-id="5091481"><code data-claire-semantic="text" class="green-text">Reino protoctistas</code>:  protozoos y algas.
-                                    </p>
-                                </li>
-                                <li  data-claire-element-id="5091484">
-                                        <p id="r-3340998" data-claire-element-id="5091483"><code data-claire-semantic="text" class="green-text">Reino Mónera</code>: <em>bacterias</em>.
-                                    </p>
-                                </li>
-                        </ul>
+                <ul>
+                    <li data-claire-element-id="5091476">
+                        <p data-claire-element-id="5091475">
+                            <code data-claire-semantic="text" class="green-text">Reino Animal</code>: <em>Conformado por
+                                animales.</em>
+                        </p>
+                    </li>
+                    <li data-claire-element-id="5091478">
+                        <p data-claire-element-id="5091477">
+                            <code data-claire-semantic="text" class="green-text">Reino Vegetal</code>: <em>Se
+                                caracteriza por las plantas.</em></p>
+                    </li>
+                    <li data-claire-element-id="5091480">
+                        <p data-claire-element-id="5091479"><code data-claire-semantic="text"
+                                class="green-text">Reino hongos</code>: <em>setas, mohos y levaduras</em>.
+                        </p>
+                    </li>
+                    <li data-claire-element-id="5091482">
+                        <p data-claire-element-id="5091481"><code data-claire-semantic="text"
+                                class="green-text">Reino protoctistas</code>: protozoos y algas.
+                        </p>
+                    </li>
+                    <li data-claire-element-id="5091484">
+                        <p id="r-3340998" data-claire-element-id="5091483"><code data-claire-semantic="text"
+                                class="green-text">Reino Mónera</code>: <em>bacterias</em>.
+                        </p>
+                    </li>
+                </ul>
             </h5>
             <!-- Card stats -->
-      <div class="row">
+            <div class="row">
 
-            <mdb-carousel [animation]="'slide'">
-            <mdb-carousel-item *ngFor="let item of slides; let i = index">
-              <div class="col-md-4" [ngClass]="{'d-none d-md-block': cardIndex !== 0}" *ngFor="let card of item; let cardIndex = index">
-                <mdb-card class="my-1">
-                 <div class="view">
-                      <mdb-card-img [src]="card.img" alt="Card image cap"></mdb-card-img>
+                <mdb-carousel [animation]="'slide'">
+                    <mdb-carousel-item *ngFor="let item of slides; let i = index">
+                        <div class="col-md-4" [ngClass]="{'d-none d-md-block': cardIndex !== 0}"
+                            *ngFor="let card of item; let cardIndex = index">
+                            <mdb-card class="my-1">
+                                <div class="view">
+                                    <mdb-card-img [src]="card.img" alt="Card image cap"></mdb-card-img>
 
-                      <div class="mask pattern-2 flex-center">
+                                    <div class="mask pattern-2 flex-center">
 
-                      <div class="carousel-caption">
-                      <div class="animated fadeInDown">
-                        <h3 class="h3-responsive">{{card.title}}</h3>
-                      </div>
-                    </div>
-                  </div>
+                                        <div class="carousel-caption">
+                                            <div class="animated fadeInDown">
+                                                <h3 class="h3-responsive">{{card.title}}</h3>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                </div>
-                </mdb-card>
-              </div>
-            </mdb-carousel-item>
-          </mdb-carousel>
-
-
-     </div>
-     <hr>
-     <h4 class="green-text d-flex justify-content">
-         Reino Animal
-     </h4>
-     <hr class ="style18"  color="#a1887f">
-     <h5>
-            <p>Los animales tienen las siguientes características:
-                <li>
-                     Son pluricelulares.
-                </li>
-                <li>
-                        No son capaces de fabricar su alimento a partir de sustancias sencillas, como lo
-                        hacen las plantas, por lo que se alimentan de otros seres vivos.
-                </li>
-                <li>
-                        La mayoría son capaces de desplazarse de un lugar a otro.
-                </li>
-                   <li>
-                        Tienen sistema nervioso, más o menos complejo, y órganos de los sentidos. Por
-                        eso reaccionan rápidamente a los cambios que captan.
-                   </li>
-
-             </p>
-     </h5>
+                                </div>
+                            </mdb-card>
+                        </div>
+                    </mdb-carousel-item>
+                </mdb-carousel>
 
 
-     <h4 class="green-text d-flex justify-content">
-            Reino Vegetal
-     </h4>
-     <hr color="#a1887f">
-     <h5>
-        <p>Este grupo taxonómico está formado por todas las plantas que habitan nuestro planeta, como los pinos, los robles, los tulipanes, 
-            las palmeras o el banano. Algunas de las características del reino Vegetal más destacadas son:
-            <li>
-                 Necesitan hábitats fijos para desarrollarse, que incluye tanto la tierra como el agua.
-            </li>
-            <li>
-                 Realizan la síntesis de sus propios alimentos mediante el proceso de fotosíntesis, utilizando la luz solar, el agua y el dióxido de carbono.
-            </li>
+            </div>
+            <hr>
 
-         </p>
-    </h5>
+            <button id="reinoAnimal" mdbBtn color="primary" class="waves-light" type="button" (click)="test.toggle()"
+                aria-expanded="false" mdbWavesEffect data-target="#animal" aria-controls="animal">
+                Reino Animal
+            </button>
 
-    <h4 class="green-text d-flex justify-content">
-            Reino Hongos
-     </h4>
-     <hr color="#a1887f">
-     <h5>
-        <p>Este grupo taxonómico está formado por todas las plantas que habitan nuestro planeta, como los pinos, los robles, los tulipanes, 
-            las palmeras o el banano. Algunas de las características del reino Vegetal más destacadas son:
-            <li>
-                 Necesitan hábitats fijos para desarrollarse, que incluye tanto la tierra como el agua.
-            </li>
-            <li>
-                 Realizan la síntesis de sus propios alimentos mediante el proceso de fotosíntesis, utilizando la luz solar, el agua y el dióxido de carbono.
-            </li>
+            <div class="" mdbCollapse #test="bs-collapse" id="animal" aria-expanded="true">
+                <h4 class="green-text d-flex justify-content">
+                    Reino Animal
+                </h4>
+                <hr class="style18" color="#a1887f">
+                <h5>
+                    <p>Los animales tienen las siguientes características:
+                        <li>
+                            Son pluricelulares.
+                        </li>
+                        <li>
+                            No son capaces de fabricar su alimento a partir de sustancias sencillas, como lo
+                            hacen las plantas, por lo que se alimentan de otros seres vivos.
+                        </li>
+                        <li>
+                            La mayoría son capaces de desplazarse de un lugar a otro.
+                        </li>
+                        <li>
+                            Tienen sistema nervioso, más o menos complejo, y órganos de los sentidos. Por
+                            eso reaccionan rápidamente a los cambios que captan.
+                        </li>
 
-         </p>
-    </h5>
-    <h4 class="green-text d-flex justify-content">
-            Reino Protoctista
-     </h4>
-     <hr color="#a1887f">
-     <h5>
-        <p>Este grupo taxonómico está formado por todas las plantas que habitan nuestro planeta, como los pinos, los robles, los tulipanes, 
-            las palmeras o el banano. Algunas de las características del reino Vegetal más destacadas son:
-            <li>
-                 Necesitan hábitats fijos para desarrollarse, que incluye tanto la tierra como el agua.
-            </li>
-            <li>
-                 Realizan la síntesis de sus propios alimentos mediante el proceso de fotosíntesis, utilizando la luz solar, el agua y el dióxido de carbono.
-            </li>
+                    </p>
+                </h5>
+            </div>
 
-         </p>
-    </h5>
-    <h4 class="green-text d-flex justify-content">
-            Reino Mónera
-     </h4>
-     <hr color="#a1887f">
-     <h5>
-        <p>Este grupo taxonómico está formado por todas las plantas que habitan nuestro planeta, como los pinos, los robles, los tulipanes, 
-            las palmeras o el banano. Algunas de las características del reino Vegetal más destacadas son:
-            <li>
-                 Necesitan hábitats fijos para desarrollarse, que incluye tanto la tierra como el agua.
-            </li>
-            <li>
-                 Realizan la síntesis de sus propios alimentos mediante el proceso de fotosíntesis, utilizando la luz solar, el agua y el dióxido de carbono.
-            </li>
+            <button class="btn btn-primary waves-light" type="button" (click)="test.toggle()" aria-expanded="false"
+                mdbWavesEffect data-target="#vegetal" aria-controls="animal">
+                Reino vegetal
+            </button>
 
-         </p>
-    </h5>
+            <div class="" id="vegetal" mdbCollapse #test="bs-collapse">
+                <h4 class="green-text d-flex justify-content">
+                    Reino Vegetal
+                </h4>
+                <hr color="#a1887f">
+                <h5>
+                    <p>Este grupo taxonómico está formado por todas las plantas que habitan nuestro planeta, como los
+                        pinos, los robles, los tulipanes,
+                        las palmeras o el banano. Algunas de las características del reino Vegetal más destacadas son:
+                        <li>
+                            Necesitan hábitats fijos para desarrollarse, que incluye tanto la tierra como el agua.
+                        </li>
+                        <li>
+                            Realizan la síntesis de sus propios alimentos mediante el proceso de fotosíntesis,
+                            utilizando la luz solar, el agua y el dióxido de carbono.
+                        </li>
+
+                    </p>
+                </h5>
+            </div>
+
+
+
+
+
+            <h4 class="green-text d-flex justify-content">
+                Reino Hongos
+            </h4>
+            <hr color="#a1887f">
+            <h5>
+                <p>Este grupo taxonómico está formado por todas las plantas que habitan nuestro planeta, como los pinos,
+                    los robles, los tulipanes,
+                    las palmeras o el banano. Algunas de las características del reino Vegetal más destacadas son:
+                    <li>
+                        Necesitan hábitats fijos para desarrollarse, que incluye tanto la tierra como el agua.
+                    </li>
+                    <li>
+                        Realizan la síntesis de sus propios alimentos mediante el proceso de fotosíntesis, utilizando la
+                        luz solar, el agua y el dióxido de carbono.
+                    </li>
+
+                </p>
+            </h5>
+            <h4 class="green-text d-flex justify-content">
+                Reino Protoctista
+            </h4>
+            <hr color="#a1887f">
+            <h5>
+                <p>Este grupo taxonómico está formado por todas las plantas que habitan nuestro planeta, como los pinos,
+                    los robles, los tulipanes,
+                    las palmeras o el banano. Algunas de las características del reino Vegetal más destacadas son:
+                    <li>
+                        Necesitan hábitats fijos para desarrollarse, que incluye tanto la tierra como el agua.
+                    </li>
+                    <li>
+                        Realizan la síntesis de sus propios alimentos mediante el proceso de fotosíntesis, utilizando la
+                        luz solar, el agua y el dióxido de carbono.
+                    </li>
+
+                </p>
+            </h5>
+            <h4 class="green-text d-flex justify-content">
+                Reino Mónera
+            </h4>
+            <hr color="#a1887f">
+            <h5>
+                <p>Este grupo taxonómico está formado por todas las plantas que habitan nuestro planeta, como los pinos,
+                    los robles, los tulipanes,
+                    las palmeras o el banano. Algunas de las características del reino Vegetal más destacadas son:
+                    <li>
+                        Necesitan hábitats fijos para desarrollarse, que incluye tanto la tierra como el agua.
+                    </li>
+                    <li>
+                        Realizan la síntesis de sus propios alimentos mediante el proceso de fotosíntesis, utilizando la
+                        luz solar, el agua y el dióxido de carbono.
+                    </li>
+
+                </p>
+            </h5>
         </form>
         <app-quiz></app-quiz>
 
