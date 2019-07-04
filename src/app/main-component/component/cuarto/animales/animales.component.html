@@ -21,7 +21,7 @@
                   <div class="animated fadeInDown">
                     <h3 class="h3-responsive">{{card.title}}</h3>
                     <p>{{card.description}}</p>
-                    <a routerLink="/main-component/texto/animal-text"  mdbBtn color="primary" class="bwaves-light" mdbTooltip="{{card.description}}" placement="top" mdbWavesEffect>
+                    <a [routerLink]="['/main-component/texto/', card.url]"  mdbBtn color="primary" class="bwaves-light" mdbTooltip="{{card.description}}" placement="top" mdbWavesEffect>
                         {{card.buttonText}}
                     </a>
     

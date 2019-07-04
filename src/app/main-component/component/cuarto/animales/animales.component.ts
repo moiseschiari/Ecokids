@@ -11,6 +11,7 @@ export class AnimalesComponent implements OnInit {
   constructor(private router: Router) { }
   cards = [
     {
+      url: "animal-text",
       title: 'Clasificación de los seres vivos',
       description: 'Vas a aprender sobre la claisficación de los seres vivos y sus respectivos reinos.',
       buttonText: 'Comenzemos!',
@@ -19,6 +20,7 @@ export class AnimalesComponent implements OnInit {
       
     },
     {
+      url: "",
       title: 'Animales vertebrados',
       description: 'Todo animal que tenga estructura ósea pertecene aquí.',
       buttonText: 'Comenzemos',
@@ -26,6 +28,7 @@ export class AnimalesComponent implements OnInit {
 
 	    },
     {
+      url: "",
       title: 'Animales invertebrados',
       description: 'Gusanos, sanjiguelas, medusas, van a pertenecer a este grupo.',
       buttonText: 'Comenzemos',
