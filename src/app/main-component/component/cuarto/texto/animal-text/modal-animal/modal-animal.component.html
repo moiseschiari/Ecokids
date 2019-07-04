@@ -1,0 +1,42 @@
+<button type="button" mdbBtn color="primary" class="relative waves-light" (click)="basicModal.show()" mdbWavesEffect> Reino Animal</button >
+  <div mdbModal #basicModal="mdbModal" class="modal fade right" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel"
+     aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
+                      <span aria-hidden="true">×</span>
+                  </button>
+                  <h4 class="modal-title w-100" id="myModalLabel">Reino Animal</h4>
+              </div>
+              <div class="modal-body">
+                  <h4 class="green-text d-flex justify-content">
+                      Reino Animal
+                  </h4>
+                  <hr class ="style18"  color="#a1887f">
+                  <h5>
+                         <p>Los animales tienen las siguientes características:
+                             <li>
+                                  Son pluricelulares.
+                             </li>
+                             <li>
+                                     No son capaces de fabricar su alimento a partir de sustancias sencillas, como lo
+                                     hacen las plantas, por lo que se alimentan de otros seres vivos.
+                             </li>
+                             <li>
+                                     La mayoría son capaces de desplazarse de un lugar a otro.
+                             </li>
+                                <li>
+                                     Tienen sistema nervioso, más o menos complejo, y órganos de los sentidos. Por
+                                     eso reaccionan rápidamente a los cambios que captan.
+                                </li>
+             
+                          </p>
+                  </h5>
+              </div>
+              <div class="modal-footer justify-content-center">
+                  <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>COOL</button>
+              </div>
+          </div>
+      </div >
+  </div >
