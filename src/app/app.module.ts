@@ -30,6 +30,8 @@ import { QuizComponent } from './main-component/component/cuarto/texto/quiz/quiz
 import { ErgiaTextComponent } from './main-component/cuarto/texto/ergia-text/ergia-text.component';
 import { HumanoTextComponent } from './main-component/cuarto/texto/humano-text/humano-text.component';
 import { EnergiaTextComponent } from './main-component/component/cuarto/texto/energia-text/energia-text.component';
+import { InvertebradosTextComponent } from './main-component/component/cuarto/texto/invertebrados-text/invertebrados-text.component';
+import { VertebradosTextComponent } from './main-component/component/cuarto/texto/vertebrados-text/vertebrados-text.component';
 
 
 
@@ -83,6 +85,8 @@ export const APP_ROUTING =   RouterModule.forRoot(routes);
     ErgiaTextComponent,
     HumanoTextComponent,
     EnergiaTextComponent,
+    InvertebradosTextComponent,
+    VertebradosTextComponent,
   ],
   imports: [
     BrowserModule,
