@@ -30,25 +30,7 @@ export class AnimalesComponent implements OnInit {
       description: 'Gusanos, sanjiguelas, medusas, van a pertenecer a este grupo.',
       buttonText: 'Comenzemos',
       img: 'https://carpetapedagogica.com/img/articulos/animales-invertebrados.jpg'
-    },
-    {
-      title: 'Card Title 4',
-      description: 'Some quick example text to build on the card title and make up the bulk of the card content',
-      buttonText: 'Comenzemos',
-      img: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg'
-    },
-    {
-      title: 'Card Title 5',
-      description: 'Some quick example text to build on the card title and make up the bulk of the card content',
-      buttonText: 'Comenzemos',
-      img: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg'
-    },
-    {
-      title: 'Card Title 6',
-      description: 'Some quick example text to build on the card title and make up the bulk of the card content',
-      buttonText: 'Comenzemos',
-      img: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg'
-    },
+    }
   ];
 
   slides: any = [[]];

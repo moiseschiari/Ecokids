@@ -11,6 +11,7 @@ import { IconsModule, MDBBootstrapModule } from 'angular-bootstrap-md';
 import { environment } from 'src/environments/environment';
 import { AppComponent } from './app.component';
 import {MatTabsModule} from '@angular/material/tabs';
+import {ScrollDispatchModule} from '@angular/cdk/scrolling';
 
 
 import { DashboardComponent } from './main-component/component/dashboard/dashboard.component';
@@ -41,16 +42,16 @@ const routes: Routes = [
     { path: 'tutoria', component: TutoriaComponent },
 
     { path: 'texto', component: TextoComponent, children:[
-      { path: 'animal-text', component: AnimalTextComponent },  
+      { path: 'animal-text', component: AnimalTextComponent },
      ]},
     { path: 'cuarto', component: CuartoComponent, children:[
       { path: 'animales', component: AnimalesComponent },
-  
+
      ]},
 
   ]},
 
-  
+
 
 
 
@@ -90,6 +91,7 @@ export const APP_ROUTING =   RouterModule.forRoot(routes);
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     MatTabsModule,
+    ScrollDispatchModule,
 
 
   ],
