@@ -47,6 +47,8 @@ const routes: Routes = [
 
     { path: 'texto', component: TextoComponent, children:[
       { path: 'animal-text', component: AnimalTextComponent },
+      { path: 'invertebrados-text', component: InvertebradosTextComponent },
+
      ]},
     { path: 'cuarto', component: CuartoComponent, children:[
       { path: 'animales', component: AnimalesComponent },

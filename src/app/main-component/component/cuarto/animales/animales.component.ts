@@ -20,6 +20,13 @@ export class AnimalesComponent implements OnInit {
       
     },
     {
+      url: 'invertebrados-text',
+      title: 'Animales invertebrados',
+      description: 'Gusanos, sanjiguelas, medusas, van a pertenecer a este grupo.',
+      buttonText: 'Comenzemos',
+      img: 'https://carpetapedagogica.com/img/articulos/animales-invertebrados.jpg'
+    },
+    {
       url: "",
       title: 'Animales vertebrados',
       description: 'Todo animal que tenga estructura ósea pertecene aquí.',
@@ -27,13 +34,7 @@ export class AnimalesComponent implements OnInit {
       img: 'https://www.animalesvertebrados.org/wp-content/uploads/2018/12/HÁBITAT-ANIMALES-VERTEBRADOS.png'
 
 	    },
-    {
-      url: "",
-      title: 'Animales invertebrados',
-      description: 'Gusanos, sanjiguelas, medusas, van a pertenecer a este grupo.',
-      buttonText: 'Comenzemos',
-      img: 'https://carpetapedagogica.com/img/articulos/animales-invertebrados.jpg'
-    }
+  
   ];
 
   slides: any = [[]];
