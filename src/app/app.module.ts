@@ -31,6 +31,7 @@ import { QuizComponent } from './main-component/component/cuarto/texto/animal-te
 import { EnergiaTextComponent } from './main-component/component/cuarto/texto/energia-text/energia-text.component';
 import { InvertebradosTextComponent } from './main-component/component/cuarto/texto/invertebrados-text/invertebrados-text.component';
 import { VertebradosTextComponent } from './main-component/component/cuarto/texto/vertebrados-text/vertebrados-text.component';
+import { ProfesorComponent } from './main-component/component/admin/profesor/profesor.component';
 
 
 
@@ -42,6 +43,8 @@ const routes: Routes = [
   { path: 'main-component', component: MainComponentComponent ,children: [
     { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
     { path: 'dashboard', component: DashboardComponent },
+    { path: 'admin/profesor', component: ProfesorComponent },
+
     { path: 'perfil', component: PerfilComponent },
     { path: 'tutoria', component: TutoriaComponent },
 
@@ -86,6 +89,7 @@ export const APP_ROUTING =   RouterModule.forRoot(routes);
     EnergiaTextComponent,
     InvertebradosTextComponent,
     VertebradosTextComponent,
+    ProfesorComponent,
   ],
   imports: [
     BrowserModule,

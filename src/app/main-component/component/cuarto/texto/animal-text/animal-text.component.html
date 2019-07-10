@@ -72,12 +72,111 @@
             </div>
             <hr>
 
-            <button id="reinoAnimal" mdbBtn color="primary" class="waves-light" type="button" (click)="test.toggle()"
-                aria-expanded="false" mdbWavesEffect data-target="#animal" aria-controls="animal">
-                Reino Animal
-            </button>
+ <section class="text-center my-5">
 
-            <div class="" mdbCollapse #test="bs-collapse" id="animal" aria-expanded="true">
+        <!-- Grid row -->
+        <div class="row">
+
+          <!-- Grid column -->
+          <div class="col-lg-2 col-md-12 mb-lg-0 mb-4">
+
+            <!-- Featured image -->
+            <a (click)="test.toggle()">
+              
+              <div class="view overlay zoom z-depth-2 mb-4 waves-light" mdbWavesEffect>
+                <img class="img-fluid" src="https://happylearning.tv/wp-content/uploads/2019/01/reino-animal.png" alt="Sample image">
+                <a>
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+            </a>
+
+
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-lg-2 col-md-6 mb-md-0 mb-4">
+
+            <!-- Featured image -->
+            <a (click)="test2.toggle()">
+              <div class="view overlay zoom z-depth-2 mb-4 waves-light" mdbWavesEffect>
+                <img class="img-fluid" src="http://1rciclovedruna.files.wordpress.com/2012/02/happydaisyhgclrrg81.gif" alt="Sample image">
+                <a>
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+            </a>
+
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-lg-2 col-md-6 mb-0">
+
+            <!-- Featured image -->
+            <a (click)="test3.toggle()">
+              <div class="view overlay zoom z-depth-2 mb-4 waves-light" mdbWavesEffect>
+                <img class="img-fluid" src="http://3.bp.blogspot.com/-7mFiUY9cf5c/VmH-AzW4hjI/AAAAAAAE7eY/0wxd_2cpi_w/s1600/ZE4sJ3.png" alt="Sample image">
+                <a>
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+            </a>
+          </div>
+          <!-- Grid column -->
+          <div class="col-lg-2 col-md-12 mb-lg-0 mb-4">
+
+            <!-- Featured image -->
+            <a (click)="test4.toggle()">
+              <div class="view overlay zoom z-depth-2 mb-4 waves-light" mdbWavesEffect>
+                <img class="img-fluid" src="https://i.ytimg.com/vi/43jW2pmJpo0/maxresdefault.jpg" alt="Sample image">
+                <a>
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+            </a>
+
+
+          </div>
+
+          <div class="col-lg-2 col-md-12 mb-lg-0 mb-4">
+
+            <!-- Featured image -->
+            <a (click)="test5.toggle()">
+              <div class="view overlay zoom z-depth-2 mb-4 waves-light" mdbWavesEffect>
+                <img class="img-fluid" src="https://i.ytimg.com/vi/pvJKa2YoP6Y/maxresdefault.jpg" alt="Sample image">
+                <a>
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+            </a>
+
+
+          </div>
+
+          <div class="col-lg-2 col-md-12 mb-lg-0 mb-4">
+
+              <!-- Featured image -->
+              <a (click)="test6.toggle()">
+                <div class="view overlay zoom z-depth-2 mb-4 waves-light" mdbWavesEffect>
+                  <img class="img-fluid" src="https://i.ytimg.com/vi/SCvS0Z3kckY/maxresdefault.jpg" alt="Sample image">
+                  <a>
+                    <div class="mask rgba-white-slight"></div>
+                  </a>
+                </div>
+              </a>
+  
+  
+            </div>
+
+
+        </div>
+        <!-- Grid row -->
+
+      </section>
+
+            <div class="" mdbCollapse #test="bs-collapse">
                 <h4 class="green-text d-flex justify-content">
                     Reino Animal
                 </h4>
@@ -103,12 +202,8 @@
                 </h5>
             </div>
 
-            <button class="btn btn-primary waves-light" type="button" (click)="test.toggle()" aria-expanded="false"
-                mdbWavesEffect data-target="#vegetal" aria-controls="animal">
-                Reino vegetal
-            </button>
 
-            <div class="" id="vegetal" mdbCollapse #test="bs-collapse">
+            <div class="" mdbCollapse #test2="bs-collapse">
                 <h4 class="green-text d-flex justify-content">
                     Reino Vegetal
                 </h4>
@@ -132,7 +227,7 @@
 
 
 
-
+            <div class="" mdbCollapse #test3="bs-collapse">
             <h4 class="green-text d-flex justify-content">
                 Reino Hongos
             </h4>
@@ -151,6 +246,9 @@
 
                 </p>
             </h5>
+          </div>
+
+          <div class="" mdbCollapse #test4="bs-collapse">
             <h4 class="green-text d-flex justify-content">
                 Reino Protoctista
             </h4>
@@ -166,9 +264,12 @@
                         Realizan la síntesis de sus propios alimentos mediante el proceso de fotosíntesis, utilizando la
                         luz solar, el agua y el dióxido de carbono.
                     </li>
-
                 </p>
             </h5>
+          </div>
+          
+
+            <div class="" mdbCollapse #test5="bs-collapse">
             <h4 class="green-text d-flex justify-content">
                 Reino Mónera
             </h4>
@@ -187,64 +288,9 @@
 
                 </p>
             </h5>
+          </div>
         </form>
-
-        <!-- Section: Blog v.2 -->
-<section class="text-center my-5">
-
-      
-        <!-- Grid row -->
-        <div class="row">
-      
-          <!-- Grid column -->
-          <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
-      
-            <!-- Featured image -->
-            <div class="view overlay rounded z-depth-2 mb-4 waves-light" mdbWavesEffect>
-              <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/81.jpg" alt="Sample image">
-              <a>
-                <div class="mask rgba-white-slight"></div>
-              </a>
-            </div>
-      
-      
-          </div>
-          <!-- Grid column -->
-      
-          <!-- Grid column -->
-          <div class="col-lg-4 col-md-6 mb-md-0 mb-4">
-      
-            <!-- Featured image -->
-            <div class="view overlay rounded z-depth-2 mb-4 waves-light" mdbWavesEffect>
-              <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" alt="Sample image">
-              <a>
-                <div class="mask rgba-white-slight"></div>
-              </a>
-            </div>
-      
-      
-          </div>
-          <!-- Grid column -->
-      
-          <!-- Grid column -->
-          <div class="col-lg-4 col-md-6 mb-0">
-      
-            <!-- Featured image -->
-            <div class="view overlay rounded z-depth-2 mb-4 waves-light" mdbWavesEffect>
-              <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/13.jpg" alt="Sample image">
-              <a>
-                <div class="mask rgba-white-slight"></div>
-              </a>
-            </div>
-      
-          </div>
-          <!-- Grid column -->
-      
-        </div>
-        <!-- Grid row -->
-      
-    </section>
-      <!-- Section: Blog v.2 -->
+        
         <app-quiz></app-quiz>
 
     </mdb-card-body>

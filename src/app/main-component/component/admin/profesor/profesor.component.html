@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  <div class="view intro"
+    style="background-image: url(https://nidiaterry.files.wordpress.com/2015/03/1-noviembre-dia-mundia-de-la-ecologia.jpg); background-attachment: fixed; background-size: cover; height: 400px;">
+    <div class="mask pattern-8 flex-center rgba-grey-slight">
+      <div class="container">
+        <div class="d-flex align-items-center d-flex justify-content-center" style="height: 600px; color:white;">
+          <div class="row mt-5">
+            <div class="col-md-12 wow fadeIn mb-3">
+              <div class="intro-info-content text-center">
+                <h2 class="h1 display-1 mb-2 wow fadeInDown" data-wow-delay="0.3s">Bienvenido Profesor </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button type="button" mdbBtn color="default" rounded="true" data-toggle="modal" data-target="#basicExample"
+    (click)="frame.show()" mdbWavesEffect>Agregar nuevo tema</button>
+
+  <div mdbModal #frame="mdbModal" class="modal fade top" id="frameModalTop" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-notify modal-warning" role="document">
+      <!--Content-->
+      <div class="modal-content">
+        <!--Header-->
+        <div class="modal-header text-center">
+          <h4 class="modal-title white-text w-100 font-weight-bold py-2">Subscribe</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+            <span aria-hidden="true" class="white-text">&times;</span>
+          </button>
+        </div>
+
+        <!--Body-->
+        <div class="modal-body">
+          <div class="md-form mb-5">
+            <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
+            <input type="text" id="form3" class="form-control" mdbInput [formControl]="modalFormSubscriptionName">
+            <label data-error="wrong" data-success="right" for="form3">Título</label>
+          </div>
+
+          <div class="md-form">
+            <mdb-icon fas icon="envelope" class="prefix grey-text"></mdb-icon>
+            <input type="email" id="form2" class="form-control" mdbInput [formControl]="modalFormSubscriptionEmail">
+            <label data-error="wrong" data-success="right" for="form2">Descripción</label>
+          </div>
+          <div class="md-form">
+            <mdb-icon fas icon="envelope" class="prefix grey-text"></mdb-icon>
+            <input type="email" id="form2" class="form-control" mdbInput [formControl]="modalFormSubscriptionEmail">
+            <label data-error="wrong" data-success="right" for="form2">Imagen</label>
+          </div>
+        </div>
+
+        <!--Footer-->
+        <div class="modal-footer justify-content-center">
+          <a type="button" mdbBtn color="warning" outline="true" class="waves-effect" mdbWavesEffect
+            (click)="f_add_newDoc(i)">Agregar
+            <mdb-icon far icon="paper-plane" class="ml-1"></mdb-icon>
+          </a>
+        </div>
+      </div>
+      <!--/.Content-->
+    </div>
+  </div>
+  <!-- Fila para agregar-->
+  
+  <!-- Fila para agregar-->
+    <section class=" d-flex flex-wrap" >
+        <div class="form-group col-md-3" *ngFor="let newDocControl of userForm.get('newDoc').controls; let i = index">
+  
+      
+            <mdb-card>
+              <!--Card image-->
+              <mdb-card-img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(97).jpg" alt="Card image cap">
+              </mdb-card-img>
+              <!--Card content-->
+              <mdb-card-body>
+      
+                <!--Title-->
+                <mdb-card-title>
+                  <h4>Card Title</h4>
+                </mdb-card-title>
+      
+                <!--Text-->
+                <mdb-card-text> Some quick example text to build on the card title and make up the bulk of the card's
+                  content.
+                </mdb-card-text>
+      
+                <a href="#" mdbBtn color="primary" mdbWavesEffect>Button</a>
+              </mdb-card-body>
+            </mdb-card>
+          </div>
+  
+    </section>
+
+
+
+
+
+  <div class="view intro "
+    style="background-image: url(https://nidiaterry.files.wordpress.com/2015/03/1-noviembre-dia-mundia-de-la-ecologia.jpg); background-attachment: fixed; background-size: cover; min-height: 300px">
+    <div class="mask pattern-8 flex-center rgba-grey-slight">
+    </div>
+  </div>
+
+
+
+
+</body>
+
+</html>
