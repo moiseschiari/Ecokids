@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,mBAAmB,AAAA,OAAO,AAAA,SAAS,CAAC,oBAAoB,CAAC;EACrD,gBAAgB,EAAE,+DAA+D;CACpF",
+    "sources": [
+        "hamburger.component.scss"
+    ],
+    "names": [],
+    "file": "hamburger.component.css"
+}

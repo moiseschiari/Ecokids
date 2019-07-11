@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "navigation-layout.component.scss"
+    ],
+    "names": [],
+    "file": "navigation-layout.component.css"
+}

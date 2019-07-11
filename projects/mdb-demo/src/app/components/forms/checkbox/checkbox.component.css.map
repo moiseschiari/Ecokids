@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,cAAc,EAAC,AAAA,IAAC,CAAK,UAAU,AAAf,CAAgB,QAAQ,GAAC,KAAK,AAAA,OAAO,CAAC;EAClD,YAAY,EAAE,uCAAuC;CACtD;;AAED,AAAA,wBAAwB,EAAC,AAAA,IAAC,CAAK,UAAU,AAAf,EAAgB,AAAA,KAAC,EAAO,WAAW,AAAlB,CAAmB,QAAQ,GAAC,KAAK,AAAA,MAAM,CAAC;EACjF,YAAY,EAAE,OAAO;EACrB,gBAAgB,EAAE,OAAO;CAC1B",
+    "sources": [
+        "checkbox.component.scss"
+    ],
+    "names": [],
+    "file": "checkbox.component.css"
+}

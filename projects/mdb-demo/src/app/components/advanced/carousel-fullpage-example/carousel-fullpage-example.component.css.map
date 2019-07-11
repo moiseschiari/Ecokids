@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,IAAI;AACJ,IAAI;AACJ,KAAK,CAAC;EACJ,MAAM,EAAE,KAAK;CAAG;;AAElB,8BAA8B;AAC9B,AAAA,SAAS,CAAC;EACR,MAAM,EAAE,KAAK;CAAG;;AAClB,AAAA,SAAS,CAAC,eAAe,CAAC;EACxB,MAAM,EAAE,KAAK;CAAG;;AAClB,AAAA,SAAS,CAAC,eAAe,CAAC,cAAc;AACxC,SAAS,CAAC,eAAe,CAAC,OAAO,CAAC;EAChC,MAAM,EAAE,KAAK;CAAG;;AAElB,AACE,GADC,AACA,QAAQ,CAAC;EACR,MAAM,EAAE,KAAK;CACd",
+    "sources": [
+        "carousel-fullpage-example.component.scss"
+    ],
+    "names": [],
+    "file": "carousel-fullpage-example.component.css"
+}

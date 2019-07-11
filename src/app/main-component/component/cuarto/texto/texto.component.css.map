@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "texto.component.scss"
+    ],
+    "names": [],
+    "file": "texto.component.css"
+}
