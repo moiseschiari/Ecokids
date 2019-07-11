@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { map } from 'rxjs/operators';
 import { auth } from 'firebase/app';
-
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { UserInterface } from '../models/user';
 
@@ -10,8 +9,12 @@ import { UserInterface } from '../models/user';
   providedIn: 'root'
 })
 export class AuthService {
+  authState: any;
 
-  constructor(private afsAuth: AngularFireAuth, private afs: AngularFirestore) { }
+  constructor(private afsAuth: AngularFireAuth, private afs: AngularFirestore) { 
+    this.afsAuth.authState.subscribe(data => this.authState = data)
+
+  }
 
   registerUser(email: string, pass: string) {
     return new Promise((resolve, reject) => {
@@ -64,6 +67,13 @@ export class AuthService {
 
   isUserAdmin(userUid) {
     return this.afs.doc<UserInterface>(`users/${userUid}`).valueChanges();
+  }
+  get authenticated(): boolean {
+    return this.authState !== null
+  }
+
+  get currentUserId(): string {
+    return this.authenticated ? this.authState.uid : null
   }
 
 

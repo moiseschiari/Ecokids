@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { AngularFireModule } from '@angular/fire';
+//import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -13,7 +13,14 @@ import { AppComponent } from './app.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {ScrollDispatchModule} from '@angular/cdk/scrolling';
 import { MatStepperModule, MatInputModule, MatButtonModule, MatAutocompleteModule } from '@angular/material';
-
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireModule } from 'angularfire2';
+import { MatCardModule } from '@angular/material/card'
+import { MatExpansionModule } from '@angular/material/expansion'
+import { MatProgressBarModule } from '@angular/material/progress-bar'
+import { MatIconModule } from '@angular/material/icon'
+import { MatToolbarModule } from '@angular/material/toolbar'
 
 import { DashboardComponent } from './main-component/component/dashboard/dashboard.component';
 import { FooterComponent } from './main-component/component/footer/footer.component';
@@ -34,6 +41,11 @@ import { VertebradosTextComponent } from './main-component/component/cuarto/text
 import { ProfesorComponent } from './main-component/component/admin/profesor/profesor.component';
 
 
+import { ListPostComponent } from './main-component/component/admin/list-post/list-post.component';
+import { DasboardPostComponent } from './main-component/component/admin/dasboard-post/dasboard-post.component';
+import { DetailPostComponent } from './main-component/component/admin/detail-post/detail-post.component'
+import { PostService } from 'src/app/services/post.service'
+
 
 
 
@@ -44,6 +56,9 @@ const routes: Routes = [
     { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
     { path: 'dashboard', component: DashboardComponent },
     { path: 'admin/profesor', component: ProfesorComponent },
+    { path: 'admin/list-post', component: ListPostComponent },
+    { path: 'admin/dasboard-post', component: DasboardPostComponent },
+    { path: 'admin/detail-post:id', component: DetailPostComponent },
 
     { path: 'perfil', component: PerfilComponent },
     { path: 'tutoria', component: TutoriaComponent },
@@ -90,6 +105,9 @@ export const APP_ROUTING =   RouterModule.forRoot(routes);
     InvertebradosTextComponent,
     VertebradosTextComponent,
     ProfesorComponent,
+    ListPostComponent,
+    DasboardPostComponent,
+    DetailPostComponent,
   ],
   imports: [
     BrowserModule,
@@ -109,11 +127,19 @@ export const APP_ROUTING =   RouterModule.forRoot(routes);
     MatInputModule,
     MatButtonModule,
     MatAutocompleteModule, 
-
+    AngularFireDatabaseModule,
+    AngularFireStorageModule,
+    MatButtonModule,
+    MatCardModule,
+    MatExpansionModule,
+    MatProgressBarModule,
+    MatIconModule,
+    MatInputModule,
+    MatToolbarModule
 
   ],
    exports: [RouterModule],
-  providers: [ ],
-  bootstrap: [AppComponent]
+   providers: [PostService],
+   bootstrap: [AppComponent]
 })
 export class AppModule { }
