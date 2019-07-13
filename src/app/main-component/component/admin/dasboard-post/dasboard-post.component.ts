@@ -3,6 +3,7 @@ import { Observable } from 'rxjs/Observable'
 import { AngularFireStorage } from 'angularfire2/storage'
 import { AuthService } from '../../../../services/auth.service'
 import { PostService } from '../../../../services/post.service'
+import { finalize } from 'rxjs/internal/operators/finalize';
 
 @Component({
   selector: 'app-dasboard-post',
@@ -41,6 +42,24 @@ export class DasboardPostComponent implements OnInit {
 
 
   uploadImage(event) {
-    
+    const file = event.target.files[0]
+    const path = `posts/${file.name}`
+   if(file.type.split('/')[0] !== 'image'){
+     return alert ('solo se acepta archivo de imagen')
+   }  
+   else {
+    const task = this.storage.upload(path, file);
+    const ref = this.storage.ref(path);
+    this.uploadPercent = task.percentageChanges();
+    console.log('Image uploaded!');
+    task.snapshotChanges().pipe(
+      finalize(() => {
+      this.downloadURL = ref.getDownloadURL()
+      this.downloadURL.subscribe(url => (this.image = url));
+    })
+  )
+  .subscribe();
+
+   }  
   }
 }

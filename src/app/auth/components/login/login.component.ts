@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
@@ -17,24 +17,40 @@ export class LoginComponent implements OnInit {
   public email: string = '';
   public password: string = '';
 
-  constructor(public afAuth: AngularFireAuth, private router: Router, private authService: AuthService) {
+  constructor(public afAuth: AngularFireAuth, private router: Router, private authService: AuthService,private ngZone: NgZone) {
   }
 
   ngOnInit() {
-      this.loginForm = new FormGroup({
+    this.loginForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', Validators.required)
-  });
+    });
   }
   onLogin(): void {
-      this.authService.loginEmailUser(this.email, this.password)
-        .then((res) => {
-          this.onLoginRedirect();
+    this.authService.loginEmailUser(this.email, this.password)
+      .then((res) => {
+        this.onLoginRedirect();
+      }).catch(err => console.log('err', err.message));
+  }
+
+
+  onLoginFacebook(): void {
+    this.authService.loginFacebookUser()
+      .then(() => {
+       this.onLoginRedirect();
+       }).catch(err => console.log('err', err.message));
+          }
+
+    onLoginGoogle(): void {
+        this.authService.loginGoogleUser()
+        .then(() => {
+        this.onLoginRedirect();
         }).catch(err => console.log('err', err.message));
-    }
-  onLoginRedirect(): void {
-      this.router.navigate(['main-component/dashboard']);
-    }
+        }
+
+    onLoginRedirect(): void {
+      this.ngZone.run(() =>this.router.navigate(['main-component/dashboard']));
+        }
 
 
 

@@ -11,14 +11,15 @@ import { AuthService } from '../../../services/auth.service';
 export class RegisterComponent implements OnInit {
   public email: string =' ';
   public password: string =' ';
-
+  public name: string =' ';
+  public lname: string =' ';
 
   constructor(private ngZone: NgZone, private router: Router, private authService: AuthService) { }
 
   ngOnInit() {
   }
   onAddUser() {
-    this.authService.registerUser(this.email, this.password)
+    this.authService.registerUser(this.email, this.password, this.name, this.lname)
       .then(() => {
               this.router.navigate(['main-component/dashboard']);
               }).catch(err => console.log('err', err.message));

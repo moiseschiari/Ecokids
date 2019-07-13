@@ -6,7 +6,7 @@
 </head>
 
 <body *ngIf="roleprof != isAdmin">
-  
+
   <div class="view intro"
     style="background-image: url(https://nidiaterry.files.wordpress.com/2015/03/1-noviembre-dia-mundia-de-la-ecologia.jpg); background-attachment: fixed; background-size: cover; height: 400px;">
     <div class="mask pattern-8 flex-center rgba-grey-slight">
@@ -23,11 +23,24 @@
       </div>
     </div>
   </div>
-      <!--seccion para agregar tarjeta-->
+  <!--seccion para agregar tarjeta-->
+  <mdb-card>
+    <mdb-card-body>
 
-    <app-dasboard-post></app-dasboard-post>
-    <app-list-post></app-list-post>
-    <app-detail-post></app-detail-post>
+      <mat-tab-group>
+        <mat-tab label="Crear nuevos temas">
+          <app-dasboard-post></app-dasboard-post>
+          <app-list-post></app-list-post>
+          <app-detail-post></app-detail-post>
+        </mat-tab>
+        <mat-tab label="Listado de estudiantes">
+          <app-estudiantetable></app-estudiantetable>
+        </mat-tab>
+      </mat-tab-group>
+
+    </mdb-card-body>
+  </mdb-card>
+
 
 
 

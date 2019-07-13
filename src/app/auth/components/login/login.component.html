@@ -52,14 +52,11 @@
       </p>
       <!-- Social login -->
       <p>Puedes iniciar con:</p>
-      <a type="button" class="btn-floating btn-fb btn-sm">
+      <a (click)="onLoginFacebook()" type="button" class="light-blue-text mx-2">
         <mdb-icon fab icon="facebook"></mdb-icon>
       </a>
-      <a type="button" class="btn-floating btn-tw btn-sm">
-        <mdb-icon fab icon="twitter"></mdb-icon>
-      </a>
-      <a type="button" class="btn-floating btn-git btn-sm">
-        <mdb-icon fab icon="heart"></mdb-icon>
+      <a (click)="onLoginGoogle()" type="button" class="light-blue-text mx-2">
+        <mdb-icon fab icon="google"></mdb-icon>
       </a>
 
     </form>

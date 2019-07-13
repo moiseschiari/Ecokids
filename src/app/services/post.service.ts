@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core'
 import {
   AngularFirestore,
   AngularFirestoreCollection,
-  AngularFirestoreDocument
-} from 'angularfire2/firestore'
+  AngularFirestoreDocument} from 'angularfire2/firestore'
 import { Post } from '../models/post';
 
 import 'rxjs/Rx';

@@ -43,6 +43,6 @@ export class DetailPostComponent implements OnInit {
   delete() {
     const id = this.route.snapshot.paramMap.get('id')
     this.postService.delete(id)
-    this.router.navigate(['/blog'])
+    this.router.navigate(['/main-component/component/admin/list-post'])
   }
 }

@@ -1,17 +1,64 @@
 <section>
-    <mat-card *ngFor="let post of posts | async">
-      <mat-card-content routerLink="{{post.id}}">
-        <img mat-card-image src="{{post.image}}" alt="{{post.title}}">
-        <h2>{{post.title}}</h2>
-        <p>
-          <small>Posted by {{post.author}} &bull; on {{post.published | date:"fullDate"}}</small>
-        </p>
-      </mat-card-content>
-      <mat-card-actions align="end" *ngIf="auth.currentUserId === post.authorId">
-        <button mat-icon-button (click)="delete(post.id)">
-          <mat-icon>delete</mat-icon>
-        </button>
-      </mat-card-actions>
-    </mat-card>
-  </section>
+  <mat-card *ngFor="let post of posts | async">
+    <mat-card-content>
+      <img mat-card-image src="{{post.image}}" alt="{{post.title}}">
+      <h2>{{post.title}}</h2>
+
+      <p>
+        <small>Publicado por {{post.author}} &bull; el {{post.published.toDate() | date: 'dd/MM/yyyy'}}</small>
+      </p>
+    </mat-card-content>
+    <button type="button" mdbBtn color="light-green" rounded="true" data-toggle="modal" data-target="#basicExample"
+      (click)="frame.show()" mdbWavesEffect>Leer más</button>
+        <!--/informacion sobre el post-->
+
+    <div mdbModal #frame="mdbModal" class="modal fade" id="frameModalTop" tabindex="1" role="dialog"
+      aria-labelledby="myModalLabel" aria-hidden="true" (open)="onOpen($event)">
+      <div class="modal-dialog modal-lg modal-notify modal-success" role="document">
+        <!--Content-->
+        <div class="modal-content">
+          <!--Header-->
+          <div class="modal-header">
+            <p class="heading lead">{{post.title}}</p>
+
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+              <span aria-hidden="true" class="white-text">&times;</span>
+            </button>
+          </div>
+
+          <!--Body-->
+          <div class="modal-body">
+            <div class="text-center">
+              <mdb-icon fas icon="check" size="4x" class="mb-3 animated rotateIn"></mdb-icon>
+              <p>{{post.content}}</p>
+            </div>
+          </div>
+
+          <!--Footer-->
+          <div class="modal-footer justify-content-center">
+            <a type="button" mdbBtn color="primary" outline="true" class="waves-effect" mdbWavesEffect
+              (click)="frame.hide()" data-dismiss="modal">Leído !! :D</a>
+          </div>
+        </div>
+        <!--/.Content-->
+      </div>
+    </div>
+        <!--/Borrar el post-->
+        <div class="footer justify-content-center">
+            <mat-card-actions align="end" *ngIf="auth.currentUserId === post.authorId">
+                <button mat-icon-button (click)="editing=true">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button (click)="delete(post.id)">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </mat-card-actions>
+          </div>
+   
+
+  </mat-card>
+
+
   
+</section>
+

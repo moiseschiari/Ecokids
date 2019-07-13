@@ -22,4 +22,9 @@ export class ListPostComponent implements OnInit {
     this.postService.delete(id)
   }
 
+  onOpen(event: any) {
+    console.log(event);
+  }
+  
+
 }

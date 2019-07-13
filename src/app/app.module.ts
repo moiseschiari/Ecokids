@@ -21,6 +21,7 @@ import { MatExpansionModule } from '@angular/material/expansion'
 import { MatProgressBarModule } from '@angular/material/progress-bar'
 import { MatIconModule } from '@angular/material/icon'
 import { MatToolbarModule } from '@angular/material/toolbar'
+import { DataTablesModule } from 'angular-datatables';
 
 import { DashboardComponent } from './main-component/component/dashboard/dashboard.component';
 import { FooterComponent } from './main-component/component/footer/footer.component';
@@ -44,7 +45,8 @@ import { ProfesorComponent } from './main-component/component/admin/profesor/pro
 import { ListPostComponent } from './main-component/component/admin/list-post/list-post.component';
 import { DasboardPostComponent } from './main-component/component/admin/dasboard-post/dasboard-post.component';
 import { DetailPostComponent } from './main-component/component/admin/detail-post/detail-post.component'
-import { PostService } from 'src/app/services/post.service'
+import { PostService } from 'src/app/services/post.service';
+import { EstudiantetableComponent } from './main-component/component/admin/estudiantetable/estudiantetable.component'
 
 
 
@@ -108,6 +110,7 @@ export const APP_ROUTING =   RouterModule.forRoot(routes);
     ListPostComponent,
     DasboardPostComponent,
     DetailPostComponent,
+    EstudiantetableComponent,
   ],
   imports: [
     BrowserModule,
@@ -135,7 +138,8 @@ export const APP_ROUTING =   RouterModule.forRoot(routes);
     MatProgressBarModule,
     MatIconModule,
     MatInputModule,
-    MatToolbarModule
+    MatToolbarModule,
+    DataTablesModule
 
   ],
    exports: [RouterModule],

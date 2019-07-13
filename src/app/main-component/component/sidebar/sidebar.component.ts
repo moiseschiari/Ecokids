@@ -1,7 +1,8 @@
-import { Component, OnInit,ViewChild,ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-sidebar',
@@ -9,37 +10,50 @@ import { Router } from '@angular/router';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
-    @ViewChild('sidenav') sidenav: ElementRef;
-    clicked: boolean;
-    public isLogged: boolean = false;
+  @ViewChild('sidenav') sidenav: ElementRef;
+  clicked: boolean;
+  public isLogged: boolean = false;
+  public roleprof = false;
+  public isAdmin: any = null;
+  public userUid: string = null;
 
+  constructor(private router: Router, private authService: AuthService, private afsAuth: AngularFireAuth) {
+    this.clicked = this.clicked === undefined ? false : true;
+  }
 
-    constructor(private router: Router, private authService: AuthService, private afsAuth: AngularFireAuth) {
-      this.clicked = this.clicked === undefined ? false : true;
-    }
+  ngOnInit() {
+    this.getCurrentUser();
+  }
 
-    ngOnInit()
-    {
-      this.getCurrentUser();
-    }
-
-    getCurrentUser() {
+  getCurrentUser() {
     this.authService.isAuth().subscribe(auth => {
-      if (auth) {
+      if (auth) 
+      {
         console.log('user logged');
         this.isLogged = true;
-      } else {
+      } 
+      else 
+      {
         console.log('NOT user logged');
         this.isLogged = false;
       }
     });
+    this.authService.isAuth().subscribe(auth => {
+      if (auth) {
+        this.userUid = auth.uid;
+        this.authService.isUserAdmin(this.userUid).subscribe(userRole => {
+          this.isAdmin = Object.assign({}, userRole.roles).hasOwnProperty('admin');
+          // this.isAdmin = true;
+        })
+      }
+    })
   }
 
-    setClicked(val: boolean): void {
-      this.clicked = val;
-    }
+  setClicked(val: boolean): void {
+    this.clicked = val;
+  }
 
-    onLogout() {
+  onLogout() {
     this.afsAuth.auth.signOut();
     this.router.navigate(['auth/user']);
 

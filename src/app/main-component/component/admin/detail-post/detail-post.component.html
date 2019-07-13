@@ -25,8 +25,9 @@
           <small>Posted by {{post.author}} &bull; on {{post.published | date:"fullDate"}}</small>
         </p>
         <mat-card-content>
-          <p>{{ post.content }}</p>
+          <p>{{post.content}}</p>
         </mat-card-content>
+        
         <mat-card-actions align="end" *ngIf="auth.currentUserId === post.authorId">
           <button mat-icon-button (click)="editing=true">
             <mat-icon>edit</mat-icon>

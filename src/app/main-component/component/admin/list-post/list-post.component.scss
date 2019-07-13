@@ -3,8 +3,9 @@ section {
     grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
     grid-template-rows: auto;
     grid-gap: 10px;
-    margin: 0 auto;
+    margin:  auto;
     max-width: 90%;
+    z-index:1;
   }
   mat-card {
     margin: 10px 0;
