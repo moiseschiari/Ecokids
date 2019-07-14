@@ -29,14 +29,20 @@
 		<label for="input3" class="col-sm-4 control-label">Search Language for mock test:</label>
 		<div class="col-sm-6">
 
-			<select [(ngModel)]="selectedvalue" (change)="gettinglanguage()">
-    <option *ngFor="let g of languages" [value]="g">{{g}}</option>
-  </select>
 
-  <select class="browser-default custom-select" [(ngModel)]="selectedvalue" (change)="gettinglanguage()" >
-      <option *ngFor="let g of languages" [value]="java">{{g}}</option>
+  <select class="browser-default custom-select" [(ngModel)]="selectedvalue" (change)="gettinglanguage()">
+      <option *ngFor="let g of languages" [value]="g">{{g}}</option>
     </select>
 
+    <mat-form-field>
+    <mat-select [formControl]="quizControl" [(ngModel)]="selectedvalue" (change)="gettinglanguage()" required>
+        <mat-option>--</mat-option>
+        <mat-option *ngFor="let g of languages" [value]="g">
+          {{g}}
+        </mat-option>
+    </mat-select>
+      <mat-error *ngIf="quizControl.hasError('required')">Por favor elige la opcion de {{g}}</mat-error>
+    </mat-form-field>
 
 
 		</div>

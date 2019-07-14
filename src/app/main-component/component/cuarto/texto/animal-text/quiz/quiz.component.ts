@@ -18,6 +18,9 @@ export class QuizComponent implements OnInit {
   secondFormGroup: FormGroup;
   public answerQuiz: Number = 0;
   public sumQuestion: Number = 0;
+  
+  quizControl = new FormControl('', [Validators.required]);
+  selectFormControl = new FormControl('', Validators.required);
   constructor(private _formBuilder: FormBuilder) {
   }
 
@@ -28,24 +31,24 @@ export class QuizComponent implements OnInit {
   
 myarray: String[] = [];
 i: number = 0;
-languages: String[] = ["java"];
+languages: String[] = ["Clasificacion de los seres vivos"];
  newstr: String
   
   quizlist: Quizmodel[] = [
     {
-      ID: 1, language: "java", question: "Inventor of c++?", anslistobj: ["Pavan.c", "James Gosling", "Richie Richie", "Amos.Emmanual"], answer: "Richie Richie"
+      ID: 1, language: "Clasificacion de los seres vivos", question: "Inventor of c++?", anslistobj: ["Pavan.c", "James Gosling", "Richie Richie", "Amos.Emmanual"], answer: "Richie Richie"
     },
     {
-      ID: 2, language: "java", question: "Inventor of java?", anslistobj: ["Nayan.c", "Ärmesh", "Denish Richie", "Kiran.DY"], answer: "Denish Richie"
+      ID: 2, language: "Clasificacion de los seres vivos", question: "Inventor of java?", anslistobj: ["Nayan.c", "Ärmesh", "Denish Richie", "Kiran.DY"], answer: "Denish Richie"
     },
     {
-      ID: 3, language: "java", question: "how is java?", anslistobj: ["Easy", "Difficult", "moderate", "nonoe"], answer: "Easy"
+      ID: 3, language: "Clasificacion de los seres vivos", question: "how is java?", anslistobj: ["Easy", "Difficult", "moderate", "nonoe"], answer: "Easy"
     },
     {
-      ID: 4, language: "java", question: "Inventor of cprogram?", anslistobj: ["a", "b", "c", "d"], answer: "a"
+      ID: 4, language: "Clasificacion de los seres vivos", question: "Inventor of cprogram?", anslistobj: ["a", "b", "c", "d"], answer: "a"
     } ,
     {
-      ID: 5, language: "java", question: "Inventor of cprogram?", anslistobj: ["a", "b", "c", "d"], answer: "b"
+      ID: 5, language: "Clasificacion de los seres vivos", question: "Inventor of python?", anslistobj: ["e", "f", "g", "h"], answer: "h"
     }
   ];
 
