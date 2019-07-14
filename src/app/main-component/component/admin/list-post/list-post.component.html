@@ -8,9 +8,10 @@
         <small>Publicado por {{post.author}} &bull; el {{post.published.toDate() | date: 'dd/MM/yyyy'}}</small>
       </p>
     </mat-card-content>
+
     <button type="button" mdbBtn color="light-green" rounded="true" data-toggle="modal" data-target="#basicExample"
       (click)="frame.show()" mdbWavesEffect>Leer más</button>
-        <!--/informacion sobre el post-->
+    <!--/informacion sobre el post-->
 
     <div mdbModal #frame="mdbModal" class="modal fade" id="frameModalTop" tabindex="1" role="dialog"
       aria-labelledby="myModalLabel" aria-hidden="true" (open)="onOpen($event)">
@@ -43,22 +44,21 @@
         <!--/.Content-->
       </div>
     </div>
-        <!--/Borrar el post-->
-        <div class="footer justify-content-center">
-            <mat-card-actions align="end" *ngIf="auth.currentUserId === post.authorId">
-                <button mat-icon-button (click)="editing=true">
-                  <mat-icon>edit</mat-icon>
-                </button>
-                <button mat-icon-button (click)="delete(post.id)">
-                  <mat-icon>delete</mat-icon>
-                </button>
-              </mat-card-actions>
-          </div>
-   
+    <!--/Borrar el post-->
+    <div class="footer justify-content-center">
+      <mat-card-actions align="end" *ngIf="auth.currentUserId === post.authorId">
+        <button mat-icon-button (click)="editing=true">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="delete(post.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+    </div>
+
 
   </mat-card>
 
 
-  
-</section>
 
+</section>

@@ -22,6 +22,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar'
 import { MatIconModule } from '@angular/material/icon'
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { DataTablesModule } from 'angular-datatables';
+import {MatSelectModule} from '@angular/material/select';
 
 import { DashboardComponent } from './main-component/component/dashboard/dashboard.component';
 import { FooterComponent } from './main-component/component/footer/footer.component';
@@ -46,7 +47,8 @@ import { ListPostComponent } from './main-component/component/admin/list-post/li
 import { DasboardPostComponent } from './main-component/component/admin/dasboard-post/dasboard-post.component';
 import { DetailPostComponent } from './main-component/component/admin/detail-post/detail-post.component'
 import { PostService } from 'src/app/services/post.service';
-import { EstudiantetableComponent } from './main-component/component/admin/estudiantetable/estudiantetable.component'
+import { EstudiantetableComponent } from './main-component/component/admin/estudiantetable/estudiantetable.component';
+import { ScoreComponent } from './main-component/component/cuarto/texto/animal-text/quiz/score/score.component'
 
 
 
@@ -111,6 +113,7 @@ export const APP_ROUTING =   RouterModule.forRoot(routes);
     DasboardPostComponent,
     DetailPostComponent,
     EstudiantetableComponent,
+    ScoreComponent,
   ],
   imports: [
     BrowserModule,
@@ -139,7 +142,8 @@ export const APP_ROUTING =   RouterModule.forRoot(routes);
     MatIconModule,
     MatInputModule,
     MatToolbarModule,
-    DataTablesModule
+    DataTablesModule,
+    MatSelectModule
 
   ],
    exports: [RouterModule],
