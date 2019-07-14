@@ -8,8 +8,8 @@
         <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
           <span aria-hidden="true">×</span>
         </button>
-       <div class="brown darken-3 modal-header d-flex justify-content-center">
-                  <p class="heading">Tu calificación es: </p>
+       <div class="d-flex justify-content-center">
+                  <p class="heading"> Quiz</p>
                 </div>
       </div>
       <div class="modal-body example-1 square scrollbar-dusty-grass square thin">
@@ -24,70 +24,51 @@
               <strong>¡Comencemos!</strong>
             </p>
           </div>
-          <div class="">
-            <div class="form-group">
-              <label for="input3" class="col-sm-4 control-label">Search Language for mock test:</label>
-              <div class="col-sm-6">
 
-                <select [(ngModel)]="selectedvalue" (change)="gettinglanguage()">
-                  <option *ngFor="let g of languages" [value]="g">{{g}}</option>
-                </select>
-              </div>
-            </div>
+          	<div class="form-group">
+		<label for="input3" class="col-sm-4 control-label">Search Language for mock test:</label>
+		<div class="col-sm-6">
 
-            <div class="jumbotron" *ngFor="let g of quizlist">
-              <ul > 
+			<select [(ngModel)]="selectedvalue" (change)="gettinglanguage()">
+    <option *ngFor="let g of languages" [value]="g">{{g}}</option>
+  </select>
 
-                {{g.question}}
-
-          
-
-              <ul  *ngFor="let opt of [0,1,2,3]">
-                 
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" (click)="check($event,opt)">
-                    {{g.anslistobj[opt]}}
-                  </label>
-                </div>
-              </ul>
-              <button (click)="previous()" *ngIf="i>0">previous</button>
-              <button (click)="next()" *ngIf="i<quizlength">next</button>
-            </ul>
-            </div>
+  <select class="browser-default custom-select" [(ngModel)]="selectedvalue" (change)="gettinglanguage()" >
+      <option *ngFor="let g of languages" [value]="java">{{g}}</option>
+    </select>
 
 
-            
-            <button type="button" mdbBtn color="primary" class="waves-light" data-toggle="modal" data-target="#basicExample"
-            (click)="frame.show()" mdbWavesEffect>Listo</button>
-          
-          <div mdbModal #frame="mdbModal" class="modal fade top" id="frameModalTop" tabindex="-1" role="dialog"
-            aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-sm modal-notify" role="document">
-              <!--Content-->
-              <div class="modal-content text-center">
-                <!--Header-->
-                <div class="brown darken-3 modal-header d-flex justify-content-center">
-                  <p class="heading">Tu calificación es: </p>
-                </div>
-          
-                <!--Body-->
-                <div class="modal-body">
-                  <mdb-icon fas icon="check" size="4x" class="animated rotateIn"></mdb-icon>
-                  <p size="4x"> 
-                      {{this.marks}}
-                  </p>
-                </div>
-          
-                <!--Footer-->
-                <div class="modal-footer justify-content-center">
-                  <a type="button" mdbBtn color="light-green" class="waves-effect" mdbWavesEffect data-dismiss="modal" (click)="frame.hide()">OK</a>
-                </div>
-              </div>
-              <!--/.Content-->
-            </div>
-          </div>
 
+		</div>
+	</div>
+
+<div class="jumbotron">
+  <ul>
+{{question}}
+
+  </ul>
+  	<ul *ngFor="let opt of option">
+					<div class="checkbox">
+						<label>
+             <input type="checkbox" (click)="check($event,opt)">
+           {{opt}}
+   <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+
+
+
+   Option one
+   </label>
+					</div>
+				</ul>
+   <button (click)="previous()"*ngIf="i>0" >previous</button>
+     <button  (click)="next()" *ngIf="i<quizlength">next</button>
+
+</div>
+
+
+
+	<button class="btn btn-info" (click)="generatemark()">submit</button>
+</div>
 
 
           <!-- Default form contact -->

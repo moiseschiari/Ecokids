@@ -24,47 +24,48 @@ export class QuizComponent implements OnInit {
   ngOnInit() {
    
   }
-  myarray: String[] = [];
-  i: number = 0;
-  languages: String[] = ["java", "cprogram", "C++", "Spring", "Html", "Asp.net"];
-  newstr: String
 
+  
+myarray: String[] = [];
+i: number = 0;
+languages: String[] = ["java"];
+ newstr: String
+  
   quizlist: Quizmodel[] = [
     {
-      ID: 1, question: "¿El Reino Fungi está conformado por...?", anslistobj: ["animales", "protozoos y algas", "setas, mohos y levaduras"], answer: "animales"
+      ID: 1, language: "java", question: "Inventor of c++?", anslistobj: ["Pavan.c", "James Gosling", "Richie Richie", "Amos.Emmanual"], answer: "Richie Richie"
     },
     {
-      ID: 2, question: "¿Cuáles de los siguientes grupos de seres vivos pertenecen al reino de animales?", anslistobj: ["Mamíferos, aves y plantas.", "Mamíferos, aves y reptiles", "Mamíferos, reptiles y hongos", "Mamíferos, reptiles y protozoos"], answer: "Mamíferos, aves y reptiles"
+      ID: 2, language: "java", question: "Inventor of java?", anslistobj: ["Nayan.c", "Ärmesh", "Denish Richie", "Kiran.DY"], answer: "Denish Richie"
     },
     {
-      ID: 3, question: "¿Cuáles son los cinco reinos en los que clasificamos los seres vivos? ", anslistobj: ["animales, plantas, hongos, protoctistas y bacterias"], answer: "animales, plantas, hongos, protoctistas y bacterias"
+      ID: 3, language: "java", question: "how is java?", anslistobj: ["Easy", "Difficult", "moderate", "nonoe"], answer: "Easy"
     },
     {
-      ID: 4, question: "Inventor of cprogram?", anslistobj: ["a", "b", "c", "d"], answer: "a"
-    },
+      ID: 4, language: "java", question: "Inventor of cprogram?", anslistobj: ["a", "b", "c", "d"], answer: "a"
+    } ,
     {
-      ID: 5, question: "Inventor of cprogram?", anslistobj: ["a", "b", "c", "d"], answer: "b"
+      ID: 5, language: "java", question: "Inventor of cprogram?", anslistobj: ["a", "b", "c", "d"], answer: "b"
     }
   ];
 
   /******************************************************* */
-  quizlength: number;
-  selectedlanguage: Quizmodel[] = [];
-  question: String;
-  selectedvalue: String;
-  option: any[];
-  selectedlanques: any[];
+quizlength: number;
+selectedlanguage: Quizmodel[] = [];
+question: String;
+selectedvalue: String;
+option: any[];
+selectedlanques: any[];
+gettinglanguage() {
+this.selectedlanques =  this.quizlist.filter(d => (d.language == this.selectedvalue));
+this.question = this.selectedlanques[0].question;
+this.option = this.selectedlanques[0].anslistobj;
+this.i = 0;
+this.quizlength = this.selectedlanques.length;
+  }
 
-  /*gettinglanguage() {
-  this.selectedlanques =  this.quizlist.filter(d => (d.language == this.selectedvalue));
-  this.question = this.selectedlanques[0].question;
-  this.option = this.selectedlanques[0].anslistobj;
-  this.i = 0;
-  this.quizlength = this.selectedlanques.length;
-    }
-  
-    /******************************************************** */
-  next() {
+  /******************************************************** */
+  next() {   
     ++this.i;
     this.question = this.selectedlanques[this.i].question;
     this.option = this.selectedlanques[this.i].anslistobj;
@@ -75,13 +76,13 @@ export class QuizComponent implements OnInit {
     this.option = this.selectedlanques[this.i].anslistobj;
   }
 
-  /********************************************************* */
-
+/********************************************************* */
+  
   answerkey: AnswerKey[] = [];
 
   check(e, str: String, answer: String) {
     if (e.target.checked) {
-      console.log("..................." + str + " " + answer);
+      console.log("..................."+str + " " + answer);
       this.answerkey.push(new AnswerKey(str, answer));
     }
     else {
@@ -99,7 +100,8 @@ export class QuizComponent implements OnInit {
       if (this.answerkey[i].choosen == this.quizlist[i].answer) this.marks++;
     }
     // alert("your score is "+JSON.stringify(this.marks));
-    document.writeln("your score is " + this.marks);
+    //document.writeln("your score is " + this.marks);
+    return alert ('your score is '+ this.marks);
   }
 
   ///////////////////////////////////
@@ -139,6 +141,7 @@ export class AnswerKey {
     this.choosen = choosen;
     this.answer = answer;
   }
+
 
 }
 
