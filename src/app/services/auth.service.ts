@@ -11,7 +11,6 @@ import { Observable } from 'rxjs/internal/Observable';
 })
 export class AuthService {
   authState: any;
-
   public nameauth: string;
   public lnameauth: string;
 
@@ -62,17 +61,18 @@ export class AuthService {
 
   isAuth() {
     return this.afsAuth.authState.pipe(map(auth => auth));
+    
   }
 
   private updateUserData(user) {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
     const data: UserInterface = {
-      id: user.uid,
       email: user.email,
+      id: user.uid,      
       name: this.nameauth,
       lname: this.lnameauth,
       roles: {
-        admin: false
+        editor: true
       }
     }
     return userRef.set(data, { merge: true })
@@ -87,9 +87,10 @@ export class AuthService {
 
   get currentUserId(): string {
     return this.authenticated ? this.authState.uid : null
-  }
+  }  
 
-  /*getUsers(idUser: string) {
+
+  getUsers(idUser: string) {
     this.userList = this.afs.doc<UserInterface>(`user/${idUser}`);
     return this.user = this.userList.snapshotChanges().pipe(map(action => {
       if (action.payload.exists === false) {
@@ -100,7 +101,7 @@ export class AuthService {
         return data;
       }
     }));
-  }*/
+  }
 
 
   getAllUser() {
@@ -113,5 +114,7 @@ export class AuthService {
           return data;
         });
       }));
+
+    }
+
   }
-}

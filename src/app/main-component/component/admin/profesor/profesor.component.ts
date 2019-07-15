@@ -39,6 +39,8 @@ export class ProfesorComponent implements OnInit {
         this.authService.isUserAdmin(this.userUid).subscribe(userRole => {
           this.isAdmin = Object.assign({}, userRole.roles).hasOwnProperty('admin');
           // this.isAdmin = true;
+
+        
         })
       }
     })

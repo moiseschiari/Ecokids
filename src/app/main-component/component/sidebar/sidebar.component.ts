@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
+import { UserInterface } from '../../../models/user';
 
 
 @Component({
@@ -14,8 +15,10 @@ export class SidebarComponent implements OnInit {
   clicked: boolean;
   public isLogged: boolean = false;
   public roleprof = false;
-  public isAdmin: any = null;
+  public isAdmin= false;
   public userUid: string = null;
+  private users: UserInterface[];
+
 
   constructor(private router: Router, private authService: AuthService, private afsAuth: AngularFireAuth) {
     this.clicked = this.clicked === undefined ? false : true;
@@ -43,7 +46,7 @@ export class SidebarComponent implements OnInit {
         this.userUid = auth.uid;
         this.authService.isUserAdmin(this.userUid).subscribe(userRole => {
           this.isAdmin = Object.assign({}, userRole.roles).hasOwnProperty('admin');
-          // this.isAdmin = true;
+          //this.isAdmin = true;
         })
       }
     })

@@ -27,76 +27,12 @@
  <mdb-card-body>
 <div class="container-fluid" style="color:#a1887f" >
   <!-- Table -->
-  <div class="row">
+  <div class="row text-center">
     <div class="col">
       <div class="card shadow animated zoomInDown">
         <div class="card-group">
 
-          <!-- Section: form gradient -->
-
-          <div class="col-md-6 ">
-
-          <!--Form with header-->
-          <mdb-card>
-
-            <!--Header-->
-            <div class="header tempting-azure-gradient">
-
-              <div class="row d-flex justify-content-center">
-                <h3 class="white-text mb-0 py-5 font-weight-bold">Mi cuenta</h3>
-              </div>
-
-            </div>
-            <!--Header-->
-
-            <mdb-card-body class="mx-4">
-
-              <div class="md-form">
-                <i class="fas fa-user prefix grey-text"></i>
-                <input type="text" id="form104" class="form-control" mdbInput>
-                <label for="form104">Nombre</label>
-              </div>
-
-              <div class="md-form">
-                <i class="fas fa-envelope prefix grey-text"></i>
-                <input type="text" id="form105" class="form-control" mdbInput>
-                <label for="form105">email</label>
-              </div>
-
-              <div class="md-form">
-                <i class="fas fa-tag prefix grey-text"></i>
-                <input type="text" id="form106" class="form-control" mdbInput>
-                <label for="form106">ID</label>
-              </div>
-
-              <div class="md-form">
-                <i class="fas fa-pencil-alt prefix grey-text"></i>
-                <textarea type="text" id="form107" class="md-textarea form-control" rows="5" mdbInput></textarea>
-                <label for="form107">Sobre ti</label>
-              </div>
-
-
-              <!--Grid row-->
-              <div class="row d-flex align-items-center mb-3 mt-4">
-
-                <!--Grid column-->
-                <div class="col-md-12">
-                  <div class="text-center">
-                    <button type="button" mdbBtn color="grey" rounded="true" class="z-depth-1a">Actualizar</button>
-                  </div>
-                </div>
-                <!--Grid column-->
-
-              </div>
-              <!--Grid row-->
-            </mdb-card-body>
-
-          </mdb-card>
-          <!--/Form with header-->
-
-
-        </div>
-
+      
         <div class="col-md-6 ">
 
           <mdb-card >
@@ -106,8 +42,11 @@
                     <img src="./assets/img/brand/ecokids.png" height="96" width="96" class="rounded-circle z-depth-0" alt="avatar image">
                 </div>
 
-                <h3  class="mt-4">Anonymous</h3>
-                <h3  class="mt-4">Anonymous user</h3>
+                    <p>
+                        
+
+                        {{user.email}}
+                    </p>
 
                 <a mdbBtn class="mt-3" color="primary">
                   <i class="fa fa-sign-out"></i>

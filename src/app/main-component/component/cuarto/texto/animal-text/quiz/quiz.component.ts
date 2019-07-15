@@ -36,19 +36,19 @@ languages: String[] = ["Clasificacion de los seres vivos"];
   
   quizlist: Quizmodel[] = [
     {
-      ID: 1, language: "Clasificacion de los seres vivos", question: "Inventor of c++?", anslistobj: ["Pavan.c", "James Gosling", "Richie Richie", "Amos.Emmanual"], answer: "Richie Richie"
+      ID: 1, language: "Clasificacion de los seres vivos", question: " ¿Cuáles son los cinco reinos en los que clasificamos los seres vivos?", anslistobj: ["animales, plantas, hongos, protozoarios y bacterias", "plantas, animales, bacterias, protones y hongos", "animales, bacterias, protoctistias, hongos y setas", "animales, peces, hongos, bacterias y plantas"], answer: "animales, bacterias, protoctistias, hongos y setas"
     },
     {
-      ID: 2, language: "Clasificacion de los seres vivos", question: "Inventor of java?", anslistobj: ["Nayan.c", "Ärmesh", "Denish Richie", "Kiran.DY"], answer: "Denish Richie"
+      ID: 2, language: "Clasificacion de los seres vivos", question: "¿El Reino Fungi está conformado por...?", anslistobj: ["animales", "protozoos y algas", "setas, mohos y levaduras", "bacterias"], answer: "Denish Richie"
     },
     {
-      ID: 3, language: "Clasificacion de los seres vivos", question: "how is java?", anslistobj: ["Easy", "Difficult", "moderate", "nonoe"], answer: "Easy"
+      ID: 3, language: "Clasificacion de los seres vivos", question: "¿Cual de las siguientes opciones es una caracteristica del reino animal?", anslistobj: ["Easy", "Difficult", "moderate", "nonoe"], answer: "Easy"
     },
     {
-      ID: 4, language: "Clasificacion de los seres vivos", question: "Inventor of cprogram?", anslistobj: ["a", "b", "c", "d"], answer: "a"
+      ID: 4, language: "Clasificacion de los seres vivos", question: "Realizan la síntesis de sus propios alimentos ", anslistobj: ["Reino animal", "Reino Plantae", "Reino fungi", "Reino Proctotidta", "Reino Monera"], answer: "Reino Plantae"
     } ,
     {
-      ID: 5, language: "Clasificacion de los seres vivos", question: "Inventor of python?", anslistobj: ["e", "f", "g", "h"], answer: "h"
+      ID: 5, language: "Clasificacion de los seres vivos", question: " ¿Qué característica de las siguientes no encontramos en el reino de los hongos?", anslistobj: ["Los hay pluricelulares.", "Toman su alimento del medio.", "Los hay unicelulares.", "Se desplazan."], answer: "Se desplazan."
     }
   ];
 
@@ -98,13 +98,16 @@ this.quizlength = this.selectedlanques.length;
   ///////////////////////////////////
 
   marks: number = 0;
+  total: number; 
   generatemark() {
     for (var i = 0; i < this.answerkey.length; i++) {
       if (this.answerkey[i].choosen == this.quizlist[i].answer) this.marks++;
     }
     // alert("your score is "+JSON.stringify(this.marks));
     //document.writeln("your score is " + this.marks);
-    return alert ('your score is '+ this.marks);
+
+    return alert ('Tu calificación es '+ (this.marks/ 5) * 5 );
+
   }
 
   ///////////////////////////////////

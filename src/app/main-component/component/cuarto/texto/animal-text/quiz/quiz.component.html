@@ -1,6 +1,9 @@
-<button type="button" mdbBtn color="primary" class="relative waves-light" (click)="basicModal.show()"
-  mdbWavesEffect>Quiz</button>
-<div mdbModal #basicModal="mdbModal" class="modal fade right" tabindex="-1" role="dialog"
+
+  <div class="col text-center">
+      <button mdbBtn type="button" color="default" rounded="true" outline="true" class="relative waves-light" (click)="basicModal.show()"
+      mdbWavesEffect>Quiz</button>
+</div>
+  <div mdbModal #basicModal="mdbModal" class="modal fade right" tabindex="-1" role="dialog"
   aria-labelledby="myBasicModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
@@ -8,9 +11,9 @@
         <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
           <span aria-hidden="true">×</span>
         </button>
-       <div class="d-flex justify-content-center">
-                  <p class="heading"> Quiz</p>
-                </div>
+        <div class="d-flex justify-content-center">
+          <p class="heading"> Quiz</p>
+        </div>
       </div>
       <div class="modal-body example-1 square scrollbar-dusty-grass square thin">
         <!-- Default form contact -->
@@ -25,59 +28,47 @@
             </p>
           </div>
 
-          	<div class="form-group">
-		<label for="input3" class="col-sm-4 control-label">Search Language for mock test:</label>
-		<div class="col-sm-6">
-
-
-  <select class="browser-default custom-select" [(ngModel)]="selectedvalue" (change)="gettinglanguage()">
-      <option *ngFor="let g of languages" [value]="g">{{g}}</option>
-    </select>
-
-    <mat-form-field>
-    <mat-select [formControl]="quizControl" [(ngModel)]="selectedvalue" (change)="gettinglanguage()" required>
-        <mat-option>--</mat-option>
-        <mat-option *ngFor="let g of languages" [value]="g">
-          {{g}}
-        </mat-option>
-    </mat-select>
-      <mat-error *ngIf="quizControl.hasError('required')">Por favor elige la opcion de {{g}}</mat-error>
-    </mat-form-field>
-
-
-		</div>
-	</div>
-
-<div class="jumbotron">
-  <ul>
-{{question}}
-
-  </ul>
-  	<ul *ngFor="let opt of option">
-					<div class="checkbox">
-						<label>
-             <input type="checkbox" (click)="check($event,opt)">
-           {{opt}}
-   <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+          <div class="form-group">
+            <label for="input3" class="col-sm-4 control-label">Seleccion el tema para activar el quiz :</label>
+            <div class="col-sm-6">
+              <select class="browser-default custom-select theme-pink" [(ngModel)]="selectedvalue"
+                (change)="gettinglanguage()">
+                <option *ngFor="let g of languages" [value]="g">{{g}}</option>
+              </select>
+            </div>
+          </div>
 
 
 
-   Option one
-   </label>
-					</div>
-				</ul>
-   <button (click)="previous()"*ngIf="i>0" >previous</button>
-     <button  (click)="next()" *ngIf="i<quizlength">next</button>
+          <div class="jumbotron border border-success">
+            <ul>
+              {{question}}
 
-</div>
+            </ul>
+            <ul *ngFor="let opt of option">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" (click)="check($event,opt)">
+
+                  {{opt}}
+                  <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+
+                </label>
+              </div>
+            </ul>
+            <button (click)="next()" *ngIf="i<quizlength">Siguiente pregunta</button>
+
+          </div>
 
 
 
-	<button class="btn btn-info" (click)="generatemark()">submit</button>
-</div>
+        
+            <button mdbBtn type="button" class=" col text-center" color="success" rounded="true" outline="true" (click)="generatemark()" mdbWavesEffect>Envía tus respuestas</button>
+
+        </div>
 
 
-          <!-- Default form contact -->
+        <!-- Default form contact -->
 
 
-          <!-- Default form contact -->
+        <!-- Default form contact -->
