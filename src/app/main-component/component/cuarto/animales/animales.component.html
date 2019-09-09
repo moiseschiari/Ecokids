@@ -1,44 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Temas</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Temas</title>
-</head>
-
-<body>
-
-  <mdb-carousel *ngFor="let item of slides; let i = index">
-    <div class="row">
-      <div class="col-md-4 " [ngClass]="{'': cardIndex !== 0}" *ngFor="let card of item; let cardIndex = index">
-
-        <mdb-card class="my-4 animated zoomInDown waves-light" mdbWavesEffect>
-          <div class="view">
-            <mdb-card-img [src]="card.img" alt="Card image cap"></mdb-card-img>
-            <div class="mask pattern-2 flex-center">
-
-              <div class="carousel-caption">
-                <div class="animated fadeInDown">
-                  <h3 class="h3-responsive">{{card.title}}</h3>
-                  <p>{{card.description}}</p>
-                  <a [routerLink]="['/main-component/texto/', card.url]" mdbBtn color="primary" class="bwaves-light"
-                    mdbTooltip="{{card.description}}" placement="top" mdbWavesEffect>
-                    {{card.buttonText}}
-                  </a>
-
+  <body>
+    <mdb-carousel *ngFor="let item of slides; let i = index">
+      <div class="row">
+        <div
+          class="col-md-4 "
+          [ngClass]="{ '': cardIndex !== 0 }"
+          *ngFor="let card of item; let cardIndex = index"
+        >
+          <mdb-card
+            class="my-4 animated zoomInDown waves-light"
+            mdbWavesEffect
+            style="max-height:275px;"
+          >
+            <div class="view">
+              <mdb-card-img
+                [src]="card.img"
+                alt="Card image cap"
+                class="card-image mb-3"
+              ></mdb-card-img>
+              <div class="mask pattern-2 flex-center" style="max-height:275px;">
+                <div class="carousel-caption">
+                  <div
+                    class="animated fadeInDown"
+                    style="width: fit-content; height:fit-content;"
+                  >
+                    <h3 class="h3-responsive">{{ card.title }}</h3>
+                    <p>{{ card.description }}</p>
+                    <a
+                      [routerLink]="['/main-component/texto/', card.url]"
+                      mdbBtn
+                      color="primary"
+                      class="bwaves-light"
+                      mdbTooltip="{{ card.description }}"
+                      placement="top"
+                      mdbWavesEffect
+                    >
+                      {{ card.buttonText }}
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
-
-          </div>
-        </mdb-card>
+          </mdb-card>
+        </div>
       </div>
-
-    </div>
-  </mdb-carousel>
-
-</body>
-
+    </mdb-carousel>
+  </body>
 </html>

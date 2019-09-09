@@ -1,112 +1,192 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <title></title>
-</head>
-
-<body>
-  <!--Main Navigation-->
-  <header>
-
-    <!-- Sidebar -->
-    <div class="sidebar-fixed position-fixed" *ngIf="isLogged">
-
-      <a class="logo-wrapper waves-effect">
-        <img src="./assets/img/brand/ecokids.png" class="img-fluid" alt="">
-      </a>
-
-      <div class="list-group list-group-flush">
-
-        <a [routerLink]="['dashboard']" routerLinkActive="active"
-          class="list-group-item list-group-item-action waves-effect">
-          <mdb-icon fas icon="chart-pie" class="mr-3" style="color:#ffd54f"></mdb-icon>Inicio
+  <body>
+    <!--Main Navigation-->
+    <header>
+      <!-- Sidebar -->
+      <div class="sidebar-fixed position-fixed" *ngIf="isLogged">
+        <a class="logo-wrapper waves-effect">
+          <img src="./assets/img/brand/ecokids.png" class="img-fluid" alt="" />
         </a>
 
-        <a [routerLink]="['tutoria']" routerLinkActive="active"
-          class="list-group-item list-group-item-action waves-effect">
-          <mdb-icon fas icon="table" class="mr-3" style="color:#a1887f"></mdb-icon>Tutorías
-        </a>
+        <div class="list-group list-group-flush">
+          <a
+            [routerLink]="['dashboard']"
+            routerLinkActive="active"
+            class="list-group-item list-group-item-action waves-effect"
+          >
+            <mdb-icon
+              fas
+              icon="chart-pie"
+              class="mr-3"
+              style="color:#ffd54f"
+            ></mdb-icon
+            >Inicio
+          </a>
 
-        <a [routerLink]="['']" routerLinkActive="deactive" class="list-group-item list-group-item-action waves-effect">
-          <mdb-icon far icon="map" class="mr-3" style="color:#81c784"></mdb-icon>Puntajes
-        </a>
-        <a [routerLink]="['perfil']" routerLinkActive="active"
-          class="list-group-item list-group-item-action waves-effect">
-          <mdb-icon fas icon="user" class="mr-3" style="color:red"></mdb-icon>Perfil
-        </a>
-        <a routerLink="nonExistingPath" routerLinkActive="active"
-          class="list-group-item list-group-item-action waves-effect">
-          <mdb-icon fas icon="exclamation" class="mr-3" style="color:#66bb6a"></mdb-icon>Ayuda
-        </a>
+          <a
+            [routerLink]="['tutoria']"
+            routerLinkActive="active"
+            class="list-group-item list-group-item-action waves-effect"
+          >
+            <mdb-icon
+              fas
+              icon="table"
+              class="mr-3"
+              style="color:#a1887f"
+            ></mdb-icon
+            >Tutorías
+          </a>
 
+          <a
+            [routerLink]="['']"
+            routerLinkActive="deactive"
+            class="list-group-item list-group-item-action waves-effect"
+          >
+            <mdb-icon
+              far
+              icon="map"
+              class="mr-3"
+              style="color:#81c784"
+            ></mdb-icon
+            >Puntajes
+          </a>
+          <a
+            [routerLink]="['perfil']"
+            routerLinkActive="active"
+            class="list-group-item list-group-item-action waves-effect"
+          >
+            <mdb-icon fas icon="user" class="mr-3" style="color:red"></mdb-icon
+            >Perfil
+          </a>
+          <a
+            routerLink="nonExistingPath"
+            routerLinkActive="active"
+            class="list-group-item list-group-item-action waves-effect"
+          >
+            <mdb-icon
+              fas
+              icon="exclamation"
+              class="mr-3"
+              style="color:#66bb6a"
+            ></mdb-icon
+            >Ayuda
+          </a>
+        </div>
       </div>
+      <!-- Sidebar -->
 
-    </div>
-    <!-- Sidebar -->
+      <!--Navbar-->
+      <mdb-navbar
+        SideClass="navbar navbar-expand-lg navbar-dark green lighten-2 lighten-1"
+        *ngIf="isLogged"
+      >
+        <!-- Navbar brand -->
+        <logo class="ml-3">
+          <a
+            class="navbar-brand"
+            href="https://mdbootstrap.com/angular/angular-bootstrap-getting-started/"
+          >
+            <strong class="yellow-text">EcoKids</strong>
+          </a>
+        </logo>
+        <!-- Collapsible content -->
+        <links>
+          <!-- Links -->
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+              <a
+                class="nav-link waves-light"
+                routerLinkActive="active"
+                mdbWavesEffect
+                >Inicio<span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link waves-light"
+                routerLinkActive="active"
+                mdbWavesEffect
+                >Temas</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link waves-light disabled"
+                routerLinkActive="active"
+                mdbWavesEffect
+                >Multimedia</a
+              >
+            </li>
 
+            <li class="nav-item ">
+              <a
+                [routerLink]="['admin/profesor']"
+                routerLinkActive="active"
+                class="nav-link waves-light"
+                mdbWavesEffect
+                *ngIf="roleprof != isAdmin"
+                >Profesor</a
+              >
+            </li>
+          </ul>
+          <!-- Links -->
 
+          <ul class="navbar-nav ml-auto nav-flex-icons">
+            <!-- Search form -->
+            <form class="form-inline md-form form-sm active-cyan active-cyan-2">
+              <i class="fas fa-search" aria-hidden="true"></i>
+              <input
+                class="form-control form-control-sm ml-3 w-75"
+                type="text"
+                placeholder="Search"
+                aria-label="Search"
+                mdbInput
+              />
+            </form>
+            <li class="nav-item avatar dropdown" dropdown>
+              <a
+                dropdownToggle
+                mdbWavesEffect
+                type="button"
+                class="nav-link dropdown-toggle waves-light"
+                mdbWavesEffect
+              >
+                <img
+                  src="./assets/img/brand/ecokids.png"
+                  height="75"
+                  width="75"
+                  alt=""
+                  class="img-fluid rounded-circle z-depth-0"
+              /></a>
 
-
-    <!--Navbar-->
-    <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark green lighten-2 lighten-1" *ngIf="isLogged">
-
-      <!-- Navbar brand -->
-      <logo class="ml-3">
-        <a class="navbar-brand" href="https://mdbootstrap.com/angular/angular-bootstrap-getting-started/">
-          <strong class="yellow-text">EcoKids</strong>
-        </a>
-      </logo>
-      <!-- Collapsible content -->
-      <links>
-
-        <!-- Links -->
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item ">
-            <a class="nav-link waves-light" routerLinkActive="active" mdbWavesEffect>Inicio<span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link waves-light" routerLinkActive="active" mdbWavesEffect>Temas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link waves-light disabled" routerLinkActive="active" mdbWavesEffect>Multimedia</a>
-          </li>
-
-          <li class="nav-item ">
-            <a [routerLink]="['admin/profesor']" routerLinkActive="active" class="nav-link waves-light" mdbWavesEffect *ngIf="roleprof != isAdmin">Profesor</a>
-          </li>
-
-
-        </ul>
-        <!-- Links -->
-
-        <ul class="navbar-nav ml-auto nav-flex-icons">
-
-          <!-- Search form -->
-          <form class="form-inline md-form form-sm active-cyan active-cyan-2">
-            <i class="fas fa-search" aria-hidden="true"></i>
-            <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search"
-              mdbInput>
-          </form>
-          <li class="nav-item avatar dropdown" dropdown>
-            <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
-              <img src="./assets/img/brand/ecokids.png" height="75" width="75" alt=""
-                class="img-fluid rounded-circle z-depth-0"></a>
-            <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
-              <a class="dropdown-item waves-light" mdbWavesEffect href="#">Mi cuenta</a>
-              <a class="dropdown-item waves-light" mdbWavesEffect (click)="onLogout()">Log out</a>
-            </div>
-          </li>
-        </ul>
-      </links>
-      <!-- Collapsible content -->
-
-    </mdb-navbar>
-    <!--/.Navbar-->
-
-  </header>
-  <!--Main Navigation-->
-</body>
-
+              <div
+                *dropdownMenu
+                class="dropdown-menu dropdown-menu-right dropdown dropdown-primary"
+                role="menu"
+              >
+                <a class="dropdown-item waves-light" mdbWavesEffect href="#"
+                  >Mi cuenta</a
+                >
+                <a
+                  class="dropdown-item waves-light"
+                  mdbWavesEffect
+                  (click)="onLogout()"
+                  >Log out</a
+                >
+              </div>
+            </li>
+          </ul>
+        </links>
+        <!-- Collapsible content -->
+      </mdb-navbar>
+      <!--/.Navbar-->
+    </header>
+    <!--Main Navigation-->
+  </body>
 </html>
