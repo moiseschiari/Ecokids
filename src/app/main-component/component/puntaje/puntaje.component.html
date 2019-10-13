@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <div
+      class="view intro"
+      style="background-image: url(http://admin.masivaecologica.com/SVsitefiles/masecom/contenido/med/47cb30_dia_mundial_de_la_ecologia-1.jpg); background-attachment: fixed; background-size: cover; height: 400px;"
+    >
+      <div class="mask pattern-8 flex-center rgba-grey-slight">
+        <div class="container">
+          <div
+            class="d-flex align-items-center d-flex justify-content-center"
+            style="height: 600px; color:white; text-decoration-style: solid;"
+          >
+            <div class="row mt-5">
+              <div class="col-md-12 wow fadeIn mb-3">
+                <div class="intro-info-content text-center">
+                  <h2
+                    class="h1 display-1 mb-2 wow fadeInDown"
+                    data-wow-delay="0.3s"
+                  >
+                    Notas
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <table mdbTable>
+      <thead class="black white-text">
+        <tr>
+          <th *ngFor="let head of headElements" scope="col">{{ head }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr mdbTableCol *ngFor="let el of elements">
+          <td>{{ el.first }}</td>
+          <td>{{ el.last }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div
+      class="view intro "
+      style="background-image: url(http://admin.masivaecologica.com/SVsitefiles/masecom/contenido/med/47cb30_dia_mundial_de_la_ecologia-1.jpg); background-attachment: fixed; background-size: cover; min-height: 300px"
+    >
+      <div class="mask pattern-8 flex-center rgba-grey-slight"></div>
+    </div>
+  </body>
+</html>
