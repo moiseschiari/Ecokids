@@ -1,33 +1,49 @@
-import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../../services/auth.service';
-import { AngularFireAuth } from '@angular/fire/auth';
-import { UserInterface } from '../../../models/user';
+import { Component, OnInit } from "@angular/core";
+import { AuthService } from "../../../services/auth.service";
+import { AngularFireAuth } from "@angular/fire/auth";
+import { UserInterface } from "../../../models/user";
+import { AngularFirestore } from "@angular/fire/firestore";
+import { equal } from "assert";
 
 @Component({
-  selector: 'app-perfil',
-  templateUrl: './perfil.component.html',
-  styleUrls: ['./perfil.component.scss']
+  selector: "app-perfil",
+  templateUrl: "./perfil.component.html",
+  styleUrls: ["./perfil.component.scss"]
 })
 export class PerfilComponent implements OnInit {
-
-  constructor(private authService: AuthService) { }
+  constructor(
+    private authService: AuthService,
+    private firestore: AngularFirestore
+  ) {}
   user: UserInterface = {
-    name: '',
-    email: '',
-    photoUrl: '',
+    name: "",
+    email: "",
+    photoUrl: "",
     roles: {}
   };
 
-  public providerId: string = 'null';
+  public prodata: any;
+
+  provideProfileData() {}
+
+  public providerId: string = "null";
   ngOnInit() {
     this.authService.isAuth().subscribe(user => {
       if (user) {
-        this.user.name = user.displayName;
-        this.user.email = user.email;
-        this.user.photoUrl = user.photoURL;
-        this.providerId = user.providerData[0].providerId;
+        this.firestore
+          .collection("users", ref => ref.where("id", "==", user.uid))
+          .snapshotChanges()
+          .subscribe(data => {
+            this.prodata = data.map(e => {
+              return {
+                id: e.payload.doc.id,
+                Name: e.payload.doc.data()["name"],
+                Lname: e.payload.doc.data()["lname"],
+                Email: e.payload.doc.data()["email"]
+              };
+            });
+          });
       }
-    })
+    });
   }
-  
 }

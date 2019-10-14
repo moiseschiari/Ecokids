@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { AngularFirestore } from "@angular/fire/firestore";
+import { AuthService } from "../../../../../../services/auth.service";
 import {
   FormBuilder,
   FormGroup,
@@ -15,6 +16,11 @@ import { Answermodel } from "../../../../../../models/quizmodel";
   styleUrls: ["./quiz.component.scss"]
 })
 export class QuizComponent implements OnInit {
+  constructor(
+    private _formBuilder: FormBuilder,
+    private firestore: AngularFirestore,
+    private authService: AuthService
+  ) {}
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
@@ -23,12 +29,6 @@ export class QuizComponent implements OnInit {
 
   quizControl = new FormControl("", [Validators.required]);
   selectFormControl = new FormControl("", Validators.required);
-  constructor(
-    private _formBuilder: FormBuilder,
-    private firestore: AngularFirestore
-  ) {}
-
-  ngOnInit() {}
 
   myarray: String[] = [];
   i: number = 0;
@@ -109,6 +109,20 @@ export class QuizComponent implements OnInit {
   selectedvalue: String;
   option: any[];
   selectedlanques: any[];
+
+  /********************************************************* */
+
+  answerkey: AnswerKey[] = [];
+  ///////////////////////////////////
+  userUid: string = null;
+  userName: string = null;
+
+  /////////////////////////////////////
+
+  marks: number = 0;
+  total: number;
+
+  ngOnInit() {}
   gettinglanguage() {
     this.selectedlanques = this.quizlist.filter(
       d => d.language == this.selectedvalue
@@ -133,10 +147,6 @@ export class QuizComponent implements OnInit {
     this.option = this.selectedlanques[this.i].anslistobj;
   }
 
-  /********************************************************* */
-
-  answerkey: AnswerKey[] = [];
-
   check(e, str: String, answer: String) {
     if (e.target.checked) {
       console.log("..................." + str + " " + answer);
@@ -147,20 +157,30 @@ export class QuizComponent implements OnInit {
     console.log(this.answerkey);
     this.recursivecheck();
   }
-  ///////////////////////////////////
 
-  marks: number = 0;
-  total: number;
+  //////////////////////////////
+
+  userquiz: string = null;
+  quizmap: any;
+
+  getCurrentStudent() {
+    this.authService.isAuth().subscribe(auth => {
+      if (auth) {
+        this.userUid = auth.uid;
+        this.userquiz = auth.displayName;
+      }
+    });
+  }
   generatemark() {
     for (var i = 0; i < this.answerkey.length; i++) {
       if (this.answerkey[i].choosen == this.quizlist[i].answer) this.marks++;
     }
     // alert("your score is "+JSON.stringify(this.marks));
     //document.writeln("your score is " + this.marks);
-
+    this.getCurrentStudent();
     this.total = (this.marks / 5) * 5;
     const score = {};
-    score["Name"] = "Andres";
+    score["Name"] = this.userquiz;
     score["Nota"] = this.total;
     this.firestore.collection("notas").add(score);
     return alert("Tu calificación es " + this.total);
