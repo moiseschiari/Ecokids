@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,QAAQ,CAAC;EACL,MAAM,EAAE,SAAS;EACjB,SAAS,EAAE,KAAK;CACjB;;AACD,AAAA,cAAc,CAAC;EACb,KAAK,EAAE,IAAI;CACZ",
+    "sources": [
+        "detail-post.component.scss"
+    ],
+    "names": [],
+    "file": "detail-post.component.css"
+}

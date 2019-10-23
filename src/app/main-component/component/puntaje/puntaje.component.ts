@@ -16,7 +16,7 @@ export class PuntajeComponent implements OnInit {
   elements: any;
   notas: any;
   getScore() {
-    this.notas = this.firestorereq
+    this.firestorereq
       .collection("notas")
       .snapshotChanges()
       .subscribe(data => {

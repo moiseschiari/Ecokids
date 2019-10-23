@@ -4,7 +4,6 @@ import { AngularFireAuth } from "@angular/fire/auth";
 import { auth } from "firebase/app";
 import { Router } from "@angular/router";
 import { AuthService } from "../../../services/auth.service";
-import { AlertLoginComponent } from "./../alert-login/alert-login.component";
 
 @Component({
   selector: "app-login",
@@ -17,8 +16,6 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   public email: string = "";
   public password: string = "";
-  public alertco: AlertLoginComponent;
-  public errorh: any;
 
   constructor(
     public afAuth: AngularFireAuth,
@@ -39,19 +36,7 @@ export class LoginComponent implements OnInit {
       .then(res => {
         this.onLoginRedirect();
       })
-      .catch(error => {
-        this.onLoginError(error);
-      });
-  }
-
-  onLoginError(error) {
-    var errorCode = error.code;
-    if (errorCode === "auth/invalid-email") {
-      console.log(errorCode);
-    } else if (error === "auth/wrong-password") {
-      console.log(errorCode);
-    } else {
-    }
+      .catch(err => console.log("err", err.message));
   }
 
   onLoginFacebook(): void {

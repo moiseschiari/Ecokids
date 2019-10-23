@@ -6,7 +6,6 @@ import { AuthRoutingModule } from "./auth-routing.module";
 import { UserComponent } from "./components/user/user.component";
 import { RegisterComponent } from "./components/register/register.component";
 import { LoginComponent } from "./components/login/login.component";
-import { AlertLoginComponent } from "./components/alert-login/alert-login.component";
 
 import { MDBBootstrapModule } from "angular-bootstrap-md";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
@@ -22,8 +21,7 @@ import { AngularFirestore } from "@angular/fire/firestore";
   declarations: [
     RegisterComponent,
     LoginComponent,
-    UserComponent,
-    AlertLoginComponent
+    UserComponent
   ],
   imports: [
     MDBBootstrapModule.forRoot(),

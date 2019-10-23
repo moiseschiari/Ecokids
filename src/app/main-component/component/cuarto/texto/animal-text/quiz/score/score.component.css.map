@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "score.component.scss"
+    ],
+    "names": [],
+    "file": "score.component.css"
+}

@@ -1,0 +1,17 @@
+section {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  grid-gap: 10px;
+  margin: auto;
+  max-width: 90%;
+  z-index: 1;
+}
+
+mat-card {
+  margin: 10px 0;
+}
+/*# sourceMappingURL=list-post.component.css.map */

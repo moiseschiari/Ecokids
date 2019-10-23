@@ -45,15 +45,15 @@
           type="password"
           id="password"
           class="form-control"
-          [(ngModel)]="required"
+          [(ngModel)]="password"
           #input="ngModel"
           required
         />
         <label for="password">Password</label>
-        <mdb-error
-          *ngIf="password.invalid && (password.dirty || password.touched)"
+        <!-- <mdb-error
+          *ngIf="password.empty && (password.dirty || password.touched)"
           >Password is required</mdb-error
-        >
+        > -->
       </div>
 
       <div class="d-flex justify-content-around">

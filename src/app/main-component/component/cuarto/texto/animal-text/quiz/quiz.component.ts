@@ -167,7 +167,6 @@ export class QuizComponent implements OnInit {
     this.authService.isAuth().subscribe(auth => {
       if (auth) {
         this.userUid = auth.uid;
-        this.userquiz = auth.displayName;
       }
     });
   }
@@ -180,7 +179,7 @@ export class QuizComponent implements OnInit {
     this.getCurrentStudent();
     this.total = (this.marks / 5) * 5;
     const score = {};
-    score["Name"] = this.userquiz;
+    score["Name"] = this.userUid;
     score["Nota"] = this.total;
     this.firestore.collection("notas").add(score);
     return alert("Tu calificación es " + this.total);
