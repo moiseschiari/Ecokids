@@ -58,6 +58,7 @@ import { PuntajeComponent } from "./main-component/component/puntaje/puntaje.com
 const routes: Routes = [
   { path: "", redirectTo: "/auth/user", pathMatch: "full" },
   { path: "auth", loadChildren: "./auth/auth.module#AuthModule" },
+
   {
     path: "main-component",
     component: MainComponentComponent,
