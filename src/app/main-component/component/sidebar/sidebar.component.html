@@ -90,7 +90,8 @@
         <logo class="ml-3">
           <a
             class="navbar-brand"
-            href="https://mdbootstrap.com/angular/angular-bootstrap-getting-started/"
+            [routerLink]="['dashboard']"
+            routerLinkActive="active"
           >
             <strong class="yellow-text">EcoKids</strong>
           </a>
@@ -99,31 +100,6 @@
         <links>
           <!-- Links -->
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item ">
-              <a
-                class="nav-link waves-light"
-                routerLinkActive="active"
-                mdbWavesEffect
-                >Inicio<span class="sr-only">(current)</span></a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link waves-light"
-                routerLinkActive="active"
-                mdbWavesEffect
-                >Temas</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link waves-light disabled"
-                routerLinkActive="active"
-                mdbWavesEffect
-                >Multimedia</a
-              >
-            </li>
-
             <li class="nav-item ">
               <a
                 [routerLink]="['admin/profesor']"
